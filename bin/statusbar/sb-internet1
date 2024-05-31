@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# Show wifi icon and percent strength or wifi off if none.
+# Show ethernet icon or ethernet off if none.
+# Show vpn icon if active.
+
+case $BLOCK_BUTTON in
+	1) "$TERMINAL" -e nmtui; pkill -RTMIN+4 dwmblocks ;;
+	3) notify-send "Internet module" "\- Click to connect
+Wifi: wifi enabled
+🌐: ethernet connected
+🔒: vpn active
+" ;;
+	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+# Wifi
+if [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = 'up' ] ; then
+	wifiicon=""
+else
+	wifiicon="Wifi off"
+fi
+
+# Ethernet
+if [ "$(cat /sys/class/net/e*/operstate 2>/dev/null)" = 'up' ] ; then
+	ethericon="🌐"
+else
+	ethericon="Ethernet off"
+fi
+
+# VPN
+if [ -n "$(pgrep openvpn)" ]; then
+	vpnicon="🔒"
+else
+	vpnicon=""
+fi
+
+printf "%s %s %s\n" "$wifiicon" "$ethericon" "$vpnicon"

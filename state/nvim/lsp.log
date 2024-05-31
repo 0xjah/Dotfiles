@@ -1,0 +1,70 @@
+[START][2024-05-10 01:25:10] LSP logging initiated
+[WARN][2024-05-10 01:25:10] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 01:31:17] .../lua/vim/lsp.lua:1085	"LSP[copilot]"	"on_error"	{  code = "SERVER_REQUEST_HANDLER_ERROR",  err = "...d/.local/share/nvim/lazy/copilot.lua/lua/copilot/api.lua:235: not implemented: copilot.api.handlers['copilot/openURL']"}
+[ERROR][2024-05-10 01:31:17] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-09T22:31:17.980Z] copilotToken.notification: (ResponseError) ...d/.local/share/nvim/lazy/copilot.lua/lua/copilot/api.lua:235: not implemented: copilot.api.handlers['copilot/openURL']\n"
+[START][2024-05-10 01:42:07] LSP logging initiated
+[WARN][2024-05-10 01:42:07] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 01:42:36] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-09T22:42:36.700Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-10 01:50:46] LSP logging initiated
+[WARN][2024-05-10 01:50:46] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 01:50:50] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-09T22:50:50.842Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-10 01:53:20] LSP logging initiated
+[WARN][2024-05-10 01:53:20] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 01:53:25] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-09T22:53:25.055Z] Failed to send notification result to GitHub: 403 \n"
+[WARN][2024-05-10 01:54:07] .../lua/vim/lsp.lua:1636	"buf_attach_client called on unloaded buffer (id: 3): "
+[START][2024-05-10 01:56:30] LSP logging initiated
+[WARN][2024-05-10 01:56:30] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 01:56:45] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-09T22:56:45.157Z] Failed to send notification result to GitHub: 403 \n"
+[WARN][2024-05-10 01:56:51] .../lua/vim/lsp.lua:1636	"buf_attach_client called on unloaded buffer (id: 3): "
+[START][2024-05-10 01:59:29] LSP logging initiated
+[WARN][2024-05-10 01:59:29] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 01:59:36] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-09T22:59:36.354Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-10 02:00:30] LSP logging initiated
+[WARN][2024-05-10 02:00:30] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 02:00:35] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-09T23:00:35.251Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-10 02:09:49] LSP logging initiated
+[WARN][2024-05-10 02:09:49] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 02:09:58] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-09T23:09:58.915Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-10 02:26:33] LSP logging initiated
+[WARN][2024-05-10 02:26:33] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[START][2024-05-10 21:56:44] LSP logging initiated
+[WARN][2024-05-10 21:56:44] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 21:56:49] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-10T18:56:49.435Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-10 22:06:53] LSP logging initiated
+[WARN][2024-05-10 22:06:53] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 22:06:57] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-10T19:06:57.130Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-10 22:13:48] LSP logging initiated
+[WARN][2024-05-10 22:13:48] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 22:13:56] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-10T19:13:56.553Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-10 22:24:53] LSP logging initiated
+[WARN][2024-05-10 22:24:53] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-10 22:24:57] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-10T19:24:57.390Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-10 22:32:02] LSP logging initiated
+[WARN][2024-05-10 22:32:02] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[START][2024-05-12 12:22:15] LSP logging initiated
+[WARN][2024-05-12 12:22:15] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[START][2024-05-12 12:24:05] LSP logging initiated
+[WARN][2024-05-12 12:24:05] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-12 12:24:30] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-12T09:24:30.465Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-12 12:27:26] LSP logging initiated
+[WARN][2024-05-12 12:27:26] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-12 12:27:33] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-12T09:27:33.039Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-12 12:59:20] LSP logging initiated
+[WARN][2024-05-12 12:59:20] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-12 12:59:23] .../lua/vim/lsp.lua:1085	"LSP[copilot]"	"on_error"	{  code = "SERVER_REQUEST_HANDLER_ERROR",  err = "...d/.local/share/nvim/lazy/copilot.lua/lua/copilot/api.lua:235: not implemented: copilot.api.handlers['copilot/openURL']"}
+[ERROR][2024-05-12 12:59:23] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-12T09:59:23.754Z] copilotToken.notification: (ResponseError) ...d/.local/share/nvim/lazy/copilot.lua/lua/copilot/api.lua:235: not implemented: copilot.api.handlers['copilot/openURL']\n"
+[START][2024-05-12 13:01:58] LSP logging initiated
+[WARN][2024-05-12 13:01:58] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-12 13:02:07] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-12T10:02:07.384Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-12 13:04:55] LSP logging initiated
+[WARN][2024-05-12 13:04:55] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-12 13:04:58] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-12T10:04:58.186Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-12 13:19:44] LSP logging initiated
+[WARN][2024-05-12 13:19:44] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-12 13:19:48] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-12T10:19:48.418Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-13 09:59:46] LSP logging initiated
+[WARN][2024-05-13 09:59:46] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-13 10:00:00] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-13T07:00:00.899Z] Failed to send notification result to GitHub: 403 \n"
+[START][2024-05-13 12:50:22] LSP logging initiated
+[WARN][2024-05-13 12:50:22] ...lsp/handlers.lua:137	"The language server copilot triggers a registerCapability handler despite dynamicRegistration set to false. Report upstream, this warning is harmless"
+[ERROR][2024-05-13 12:50:31] .../vim/lsp/rpc.lua:734	"rpc"	"node"	"stderr"	"[ERROR] [auth] [2024-05-13T09:50:31.746Z] Failed to send notification result to GitHub: 403 \n"

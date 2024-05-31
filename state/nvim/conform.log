@@ -1,0 +1,3 @@
+01:12:30[ERROR] Formatter 'stylua' error: error: could not format from stdin: failed to format from stdin: error parsing: error occurred while creating ast: unexpected token `=`. (starting from line 23, character 12 and ending on line 23, character 13)
+additional information: expected ')'
+

@@ -1,0 +1,275 @@
+[INFO  Fri 10 May 2024 12:49:45 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=stylua) {}
+[INFO  Fri 10 May 2024 12:49:45 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=shfmt) {}
+[INFO  Fri 10 May 2024 12:49:45 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=lua-language-server) {}
+[ERROR Fri 10 May 2024 12:49:48 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=shfmt) error="Installation was aborted."
+[ERROR Fri 10 May 2024 12:49:48 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=lua-language-server) error="Installation was aborted."
+[ERROR Fri 10 May 2024 12:49:48 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=stylua) error="Installation was aborted."
+[INFO  Fri 10 May 2024 12:59:07 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=stylua) {}
+[INFO  Fri 10 May 2024 12:59:07 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=shfmt) {}
+[INFO  Fri 10 May 2024 12:59:07 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=lua-language-server) {}
+[INFO  Fri 10 May 2024 12:59:15 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=shfmt)
+[INFO  Fri 10 May 2024 12:59:16 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=stylua)
+[INFO  Fri 10 May 2024 12:59:18 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=lua-language-server)
+[INFO  Fri 10 May 2024 01:25:09 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=prettier) {}
+[INFO  Fri 10 May 2024 01:25:09 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=codelldb) {}
+[INFO  Fri 10 May 2024 01:25:09 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=typescript-language-server) {}
+[INFO  Fri 10 May 2024 01:25:09 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=json-lsp) {}
+[INFO  Fri 10 May 2024 01:25:12 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=taplo) {}
+[INFO  Fri 10 May 2024 01:25:12 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=prettier)
+[INFO  Fri 10 May 2024 01:26:04 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=eslint-lsp) {}
+[INFO  Fri 10 May 2024 01:26:04 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=taplo)
+[INFO  Fri 10 May 2024 01:27:24 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=rust-analyzer) {}
+[ERROR Fri 10 May 2024 01:27:24 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=json-lsp) error=spawn: npm failed with exit code 1 and signal 0. 
+[INFO  Fri 10 May 2024 01:27:24 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=tailwindcss-language-server) {}
+[ERROR Fri 10 May 2024 01:27:24 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=eslint-lsp) error=spawn: npm failed with exit code 1 and signal 0. 
+[INFO  Fri 10 May 2024 01:27:54 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=codelldb)
+[INFO  Fri 10 May 2024 01:28:06 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=rust-analyzer)
+[INFO  Fri 10 May 2024 01:28:08 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=typescript-language-server)
+[INFO  Fri 10 May 2024 01:28:51 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=tailwindcss-language-server)
+[INFO  Fri 10 May 2024 01:32:10 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=json-lsp) {}
+[INFO  Fri 10 May 2024 01:32:10 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=eslint-lsp) {}
+[INFO  Fri 10 May 2024 01:32:20 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=json-lsp)
+[INFO  Fri 10 May 2024 01:32:21 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=eslint-lsp)
+[INFO  Fri 10 May 2024 01:34:22 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=selene) {}
+[INFO  Fri 10 May 2024 01:34:22 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[INFO  Fri 10 May 2024 01:34:22 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=shellcheck) {}
+[INFO  Fri 10 May 2024 01:34:22 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=css-lsp) {}
+[INFO  Fri 10 May 2024 01:34:22 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=yaml-language-server) {}
+[ERROR Fri 10 May 2024 01:34:22 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 01:34:27 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=html-lsp) {}
+[INFO  Fri 10 May 2024 01:34:27 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=css-lsp)
+[INFO  Fri 10 May 2024 01:34:28 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=shellcheck)
+[INFO  Fri 10 May 2024 01:34:28 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=selene)
+[ERROR Fri 10 May 2024 01:34:31 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=html-lsp) error="Installation was aborted."
+[ERROR Fri 10 May 2024 01:34:36 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=yaml-language-server) error="Installation was aborted."
+[INFO  Fri 10 May 2024 01:34:49 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[INFO  Fri 10 May 2024 01:34:49 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=html-lsp) {}
+[INFO  Fri 10 May 2024 01:34:49 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=yaml-language-server) {}
+[ERROR Fri 10 May 2024 01:34:50 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 01:34:56 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=html-lsp)
+[INFO  Fri 10 May 2024 01:34:56 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=yaml-language-server)
+[INFO  Fri 10 May 2024 01:41:36 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 01:41:36 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 01:45:29 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 01:45:29 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 01:46:37 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 01:46:37 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 01:50:29 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 01:50:30 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 01:57:02 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 01:57:02 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 02:00:27 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 02:00:27 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 02:07:53 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 02:07:54 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 02:09:23 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 02:09:24 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 02:09:33 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 02:09:34 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 02:26:01 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 02:26:01 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 09:53:17 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 09:53:18 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 10:06:20 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 10:06:21 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 10:11:14 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 10:11:15 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 10:24:04 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 10:24:04 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Fri 10 May 2024 10:31:13 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Fri 10 May 2024 10:31:14 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Sat 11 May 2024 12:50:01 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sat 11 May 2024 12:50:01 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Sat 11 May 2024 12:51:53 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sat 11 May 2024 12:51:53 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Sat 11 May 2024 12:53:31 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sat 11 May 2024 12:53:31 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Sat 11 May 2024 12:54:22 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sat 11 May 2024 12:54:22 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Sun 12 May 2024 12:22:08 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 12 May 2024 12:22:08 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Sun 12 May 2024 12:24:00 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 12 May 2024 12:24:00 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Sun 12 May 2024 12:47:54 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[INFO  Sun 12 May 2024 12:59:16 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 12 May 2024 12:59:16 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Sun 12 May 2024 01:01:51 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 12 May 2024 01:01:51 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Sun 12 May 2024 01:04:45 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 12 May 2024 01:04:46 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Sun 12 May 2024 01:19:41 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 12 May 2024 01:19:41 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Sun 12 May 2024 01:24:38 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 12 May 2024 01:24:39 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Mon 13 May 2024 08:43:09 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 13 May 2024 08:43:10 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Mon 13 May 2024 08:44:31 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 13 May 2024 08:44:32 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Mon 13 May 2024 09:58:38 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 13 May 2024 09:58:39 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Mon 13 May 2024 12:50:03 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 13 May 2024 12:50:03 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[INFO  Mon 13 May 2024 12:51:25 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 13 May 2024 12:51:26 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=luacheck) error=spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+[ERROR Mon 20 May 2024 11:47:53 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 20 May 2024 11:47:53 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 20 May 2024 11:47:53 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 20 May 2024 11:56:09 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 20 May 2024 11:56:09 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 20 May 2024 11:56:09 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 21 May 2024 08:34:45 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 21 May 2024 08:34:45 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 21 May 2024 08:34:45 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 21 May 2024 08:36:11 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 21 May 2024 08:36:11 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 21 May 2024 08:36:11 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 21 May 2024 08:13:47 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 21 May 2024 08:13:47 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 21 May 2024 08:13:47 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 21 May 2024 08:14:59 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 21 May 2024 08:14:59 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 21 May 2024 08:14:59 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 21 May 2024 08:16:06 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 21 May 2024 08:16:06 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 21 May 2024 08:16:06 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 21 May 2024 11:26:48 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 21 May 2024 11:26:48 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 21 May 2024 11:26:48 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Wed 22 May 2024 09:07:03 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Wed 22 May 2024 09:07:03 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Wed 22 May 2024 09:07:03 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Wed 22 May 2024 09:10:21 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Wed 22 May 2024 09:10:21 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Wed 22 May 2024 09:10:21 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Wed 22 May 2024 09:14:25 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Wed 22 May 2024 09:14:25 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Wed 22 May 2024 09:14:25 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Wed 22 May 2024 12:13:02 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/providers/init.lua:80: Provider "github" "get_latest_release" failed: spawn: wget failed with exit code - and signal -. wget is not executable
+[ERROR Wed 22 May 2024 12:13:10 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Wed 22 May 2024 12:13:10 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Wed 22 May 2024 12:13:10 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Wed 22 May 2024 11:27:15 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Wed 22 May 2024 11:27:15 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Wed 22 May 2024 11:27:15 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Thu 23 May 2024 12:26:19 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Thu 23 May 2024 12:26:19 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Thu 23 May 2024 12:26:19 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Thu 23 May 2024 12:34:55 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Thu 23 May 2024 12:34:55 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Thu 23 May 2024 12:34:55 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Thu 23 May 2024 12:37:08 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Thu 23 May 2024 12:37:08 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Thu 23 May 2024 12:37:08 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Thu 23 May 2024 12:37:51 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Thu 23 May 2024 12:37:51 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Thu 23 May 2024 12:37:51 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Thu 23 May 2024 12:39:19 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Thu 23 May 2024 12:39:19 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Thu 23 May 2024 12:39:19 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Thu 23 May 2024 12:55:27 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Thu 23 May 2024 12:55:27 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Thu 23 May 2024 12:55:27 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Sat 25 May 2024 11:16:11 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Sat 25 May 2024 11:16:11 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sat 25 May 2024 11:16:11 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Sat 25 May 2024 11:25:21 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Sat 25 May 2024 11:25:21 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sat 25 May 2024 11:25:21 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Sat 25 May 2024 11:30:48 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Sat 25 May 2024 11:30:48 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sat 25 May 2024 11:30:48 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Sun 26 May 2024 09:26:24 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Sun 26 May 2024 09:26:24 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 26 May 2024 09:26:24 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Sun 26 May 2024 11:33:41 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Sun 26 May 2024 11:33:41 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 26 May 2024 11:33:41 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Sun 26 May 2024 11:39:43 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Sun 26 May 2024 11:39:43 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 26 May 2024 11:39:43 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Sun 26 May 2024 11:41:49 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Sun 26 May 2024 11:41:49 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 26 May 2024 11:41:49 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Sun 26 May 2024 11:43:19 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Sun 26 May 2024 11:43:19 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 26 May 2024 11:43:19 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Sun 26 May 2024 11:45:13 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Sun 26 May 2024 11:45:13 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 26 May 2024 11:45:13 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Sun 26 May 2024 11:50:21 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Sun 26 May 2024 11:50:21 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Sun 26 May 2024 11:50:21 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 27 May 2024 02:21:33 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/providers/init.lua:80: Provider "github" "get_latest_release" failed: spawn: wget failed with exit code - and signal -. wget is not executable
+[ERROR Mon 27 May 2024 02:21:36 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 27 May 2024 02:21:36 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 27 May 2024 02:21:36 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 27 May 2024 02:24:07 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/providers/init.lua:80: Provider "github" "get_latest_release" failed: spawn: wget failed with exit code - and signal -. wget is not executable
+[ERROR Mon 27 May 2024 11:15:29 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 27 May 2024 11:15:30 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 27 May 2024 11:15:30 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 27 May 2024 11:29:05 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 27 May 2024 11:29:05 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 27 May 2024 11:29:05 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 27 May 2024 11:34:32 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 27 May 2024 11:34:32 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 27 May 2024 11:34:32 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 27 May 2024 11:42:10 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 27 May 2024 11:42:10 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 27 May 2024 11:42:10 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 27 May 2024 11:42:56 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 27 May 2024 11:42:56 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 27 May 2024 11:42:56 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 27 May 2024 11:43:04 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 27 May 2024 11:43:04 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 27 May 2024 11:43:04 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 27 May 2024 11:45:10 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 27 May 2024 11:45:10 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 27 May 2024 11:45:10 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 27 May 2024 11:46:58 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 27 May 2024 11:46:58 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 27 May 2024 11:46:58 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 27 May 2024 11:47:22 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 27 May 2024 11:47:22 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 27 May 2024 11:47:22 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Mon 27 May 2024 11:52:01 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Mon 27 May 2024 11:52:01 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Mon 27 May 2024 11:52:01 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 28 May 2024 02:15:16 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 28 May 2024 02:15:16 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 28 May 2024 02:15:16 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 28 May 2024 02:18:35 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 28 May 2024 02:18:36 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 28 May 2024 02:18:36 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 28 May 2024 02:22:43 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 28 May 2024 02:22:43 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 28 May 2024 02:22:43 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 28 May 2024 02:23:43 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 28 May 2024 02:23:43 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 28 May 2024 02:23:43 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 28 May 2024 02:28:00 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 28 May 2024 02:28:01 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 28 May 2024 02:28:01 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Tue 28 May 2024 02:29:34 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Tue 28 May 2024 02:29:34 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Tue 28 May 2024 02:29:34 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Wed 29 May 2024 11:36:15 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Wed 29 May 2024 11:36:15 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Wed 29 May 2024 11:36:15 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Wed 29 May 2024 11:44:13 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Wed 29 May 2024 11:44:13 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Wed 29 May 2024 11:44:13 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Wed 29 May 2024 11:46:09 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Wed 29 May 2024 11:46:09 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Wed 29 May 2024 11:46:09 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Thu 30 May 2024 11:05:52 AM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Thu 30 May 2024 11:05:52 AM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Thu 30 May 2024 11:05:52 AM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Thu 30 May 2024 09:50:07 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Thu 30 May 2024 09:50:07 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Thu 30 May 2024 09:50:07 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Thu 30 May 2024 09:50:14 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Thu 30 May 2024 09:50:14 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Thu 30 May 2024 09:50:14 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
+[ERROR Thu 30 May 2024 09:55:00 PM +03] ...im/lazy/mason.nvim/lua/mason-registry/sources/github.lua:146: Failed to install registry GitHubRegistrySource(repo=mason-org/mason-registry). "Failed to download registry archive."
+[INFO  Thu 30 May 2024 09:55:00 PM +03] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=luacheck) {}
+[ERROR Thu 30 May 2024 09:55:00 PM +03] ...are/nvim/lazy/mason.nvim/lua/mason-core/package/init.lua:161: Unexpected error EACCES: permission denied: /home/cherry/.local/share/nvim/mason/staging/luacheck.lock
