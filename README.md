@@ -3,7 +3,10 @@
     HI This is my Dotfiles :/
       <img src="preview/nagatoro-laughing.gif" width="50">
   </h1>
+<p align="center">
+  <img align="center" src="preview/hugs.gif" alt="GIF" />
   
+</p>
   <br>
   <br>
   <h1 align="center">PREVIEW :)</h1>
