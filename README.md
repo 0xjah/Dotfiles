@@ -3,6 +3,7 @@
     HI This is my Dotfiles :/
       <img src="preview/nagatoro-laughing.gif" width="50">
   </h1>
+  
   <br>
   <br>
   <h1 align="center">PREVIEW :)</h1>
@@ -13,9 +14,9 @@
   <br>
 
 <h1 align="center">
-  <img alt="Logo" title="Logo" src="" />
+  <img alt="Logo" title="Logo" src="/preview/logo.png" />
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=ARCH&message=DWM&color=7159C1&labelColor=AA2F343F" alt="OS" />
+  <img src="https://img.shields.io/static/v1?label=ARCH&message=DWM&color=7393B3&labelColor=black" alt="OS" />
 </p>
