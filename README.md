@@ -10,9 +10,9 @@
   <br>
   <br>
   <h1 align="center">PREVIEW :)</h1>
-  <img src="preview/Sat/Sep/28/09:16:56/PM/+03/2024.png">
-  <img src="preview/Sat/Sep/28/09:10:37/PM/+03/2024.png">
-  <img src="preview/Sat/Sep/28/11:25:10/PM/+03/2024.png">
+  <img src="preview/Sat Sep 28 09_16_56 PM +03 2024.png">
+  <img src="preview/Sat Sep 28 09:10:37 PM +03 2024.png">
+  <img src="preview/Sat Sep 28 11:25:10 PM +03 2024.png">
  <br>
   <br>
 
