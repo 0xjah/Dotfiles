@@ -16,10 +16,6 @@
  <br>
   <br>
 
-# Dotfiles for My Arch Linux Setup
-
-Welcome to my dotfiles repository! This is my personal configuration for a smooth and efficient Arch Linux experience, optimized for productivity and aesthetics.
-
 ## 🔗 Info
 
 - **Window Manager**: [i3](https://i3wm.org) - A dynamic tiling window manager.
