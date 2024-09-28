@@ -25,6 +25,7 @@
 - **GTK Theme**: [Arc Dark](https://github.com/horst3180/arc-theme) - A modern GTK theme.
 - **Icons**: [Adwaita](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) - Clean and elegant icons.
 - **IDE**: [Neovim](https://neovim.io) - A customizable text editor and IDE.
+- **File Manager**:[Yazi](https://yazi-rs.github.io/) - A lightweight file manager that simplifies file navigation and organization.
 
 <h1 align="center" style="display: flex; justify-content: center; align-items: center;">
   <a href="https://archlinux.org/" target="_blank">
