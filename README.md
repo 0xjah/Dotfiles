@@ -21,5 +21,5 @@
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=ARCH&message=DWM&color=7393B3&labelColor=black" alt="OS" />
+  <img src="https://img.shields.io/static/v1?label=ARCH&message=I3&color=7393B3&labelColor=black" alt="OS" />
 </p>
