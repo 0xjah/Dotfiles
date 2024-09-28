@@ -10,16 +10,32 @@
   <br>
   <br>
   <h1 align="center">PREVIEW :)</h1>
+  <img src="preview/Sun Sep 29 02_16_51 AM +03 2024.png">
   <img src="preview/Sat Sep 28 09_16_56 PM +03 2024.png">
   <img src="preview/Sat Sep 28 09_10_37 PM +03 2024.png">
   <img src="preview/Sat Sep 28 11_25_10 PM +03 2024.png">
+  <img src='preview/preview.png'>
  <br>
   <br>
 
-<h1 align="center">
-  <img alt="Logo" title="Logo" src="/preview/logo.png" />
-</h1>
+## 🔗 Info
 
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=ARCH&message=DWM&color=7393B3&labelColor=black" alt="OS" />
-</p>
+- **Window Manager**: [i3](https://i3wm.org) - A dynamic tiling window manager.
+- **Terminal**: [Kitty](https://sw.kovidgoyal.net/kitty/) - A fast, feature-rich terminal emulator.
+- **Launcher**: [Rofi](https://github.com/DaveDavenport/rofi) - An application launcher and power menu.
+- **Shell**: [Zsh](https://www.zsh.org) - A powerful shell with the [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme.
+- **GTK Theme**: [Arc Dark](https://github.com/horst3180/arc-theme) - A modern GTK theme.
+- **Icons**: [Adwaita](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) - Clean and elegant icons.
+- **IDE**: [Neovim](https://neovim.io) - A customizable text editor and IDE.
+- **File Manager**:[Yazi](https://yazi-rs.github.io/) - A lightweight file manager that simplifies file navigation and organization.
+- **Window Manager**:[LY](https://github.com/fairyglade/ly) - A TUI display manager.
+- **Bootloader**:[GRUB](https://www.gnu.org/software/grub/) - A multiboot loader with theme based on NieR:Automata.
+<h1 align="center" style="display: flex; justify-content: center; align-items: center;">
+  <a href="https://archlinux.org/" target="_blank">
+    <img alt="Logo" title="Logo" src="/preview/logo.png" style="margin-right: 10px;" />
+  </a>
+  <span style="margin: 0 10px;">||</span>
+  <a href="https://i3wm.org/" target="_blank">
+    <img src="https://img.shields.io/static/v1?label=ARCH&message=I3&color=7393B3&labelColor=black" alt="OS" />
+  </a>
+</h1>
