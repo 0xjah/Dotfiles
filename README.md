@@ -26,14 +26,12 @@
 - **Icons**: [Adwaita](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) - Clean and elegant icons.
 - **IDE**: [Neovim](https://neovim.io) - A customizable text editor and IDE.
 
----
-
-Happy hacking! 🚀
-
-<h1 align="center">
-  <img alt="Logo" title="Logo" src="/preview/logo.png" />
+<h1 align="center" style="display: flex; justify-content: center; align-items: center;">
+  <a href="https://archlinux.org/" target="_blank">
+    <img alt="Logo" title="Logo" src="/preview/logo.png" style="margin-right: 10px;" />
+  </a>
+  <span style="margin: 0 10px;">||</span>
+  <a href="https://i3wm.org/" target="_blank">
+    <img src="https://img.shields.io/static/v1?label=ARCH&message=I3&color=7393B3&labelColor=black" alt="OS" />
+  </a>
 </h1>
-
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=ARCH&message=I3&color=7393B3&labelColor=black" alt="OS" />
-</p>
