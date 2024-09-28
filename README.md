@@ -16,6 +16,24 @@
  <br>
   <br>
 
+# Dotfiles for My Arch Linux Setup
+
+Welcome to my dotfiles repository! This is my personal configuration for a smooth and efficient Arch Linux experience, optimized for productivity and aesthetics.
+
+## 🔗 Info
+
+- **Window Manager**: [i3](https://i3wm.org) - A dynamic tiling window manager.
+- **Terminal**: [Kitty](https://sw.kovidgoyal.net/kitty/) - A fast, feature-rich terminal emulator.
+- **Launcher**: [Rofi](https://github.com/DaveDavenport/rofi) - An application launcher and power menu.
+- **Shell**: [Zsh](https://www.zsh.org) - A powerful shell with the [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme.
+- **GTK Theme**: [Arc Dark](https://github.com/horst3180/arc-theme) - A modern GTK theme.
+- **Icons**: [Adwaita](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) - Clean and elegant icons.
+- **IDE**: [Neovim](https://neovim.io) - A customizable text editor and IDE.
+
+---
+
+Happy hacking! 🚀
+
 <h1 align="center">
   <img alt="Logo" title="Logo" src="/preview/logo.png" />
 </h1>
