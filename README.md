@@ -39,7 +39,6 @@
 > chmod +x install.sh
 > ./install.sh
 
-=======
 <h1 align="center" style="display: flex; justify-content: center; align-items: center;">
   <a href="https://archlinux.org/" target="_blank">
     <img alt="Logo" title="Logo" src="/preview/logo.png" style="margin-right: 10px;" />
