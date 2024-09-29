@@ -28,8 +28,18 @@
 - **Icons**: [Adwaita](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) - Clean and elegant icons.
 - **IDE**: [Neovim](https://neovim.io) - A customizable text editor and IDE.
 - **File Manager**:[Yazi](https://yazi-rs.github.io/) - A lightweight file manager that simplifies file navigation and organization.
+<<<<<<< HEAD
 - **Window Manager**:[LY](https://github.com/fairyglade/ly) - A TUI display manager.
 - **Bootloader**:[GRUB](https://www.gnu.org/software/grub/) - A multiboot loader with theme based on NieR:Automata.
+=======
+## Installation
+```bash
+> git clone https://github.com/0xjah/Dotfiles.git
+> cd ~/Dotfiles/
+> chmod +x install.sh
+> ./install.sh
+
+=======
 <h1 align="center" style="display: flex; justify-content: center; align-items: center;">
   <a href="https://archlinux.org/" target="_blank">
     <img alt="Logo" title="Logo" src="/preview/logo.png" style="margin-right: 10px;" />

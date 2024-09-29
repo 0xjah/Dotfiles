@@ -256,6 +256,6 @@ bindsym $mod+r mode "resize"
 #  }
 #}
 #exec_always killall polybar
-exec_always --no-startup-id feh --bg-fill Pictures/1275048.jpg
+exec_always --no-startup-id feh --bg-fill Pictures/wallpaper.jpg
 exec_always --no-startup-id picom
 #exec_always --no-startup-id polybar &
