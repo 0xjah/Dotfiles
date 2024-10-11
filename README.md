@@ -10,10 +10,10 @@
   <br>
   <br>
   <h1 align="center">PREVIEW :)</h1>
-  <img src="preview/Sun Sep 29 02_16_51 AM +03 2024.png">
-  <img src="preview/Sat Sep 28 09_16_56 PM +03 2024.png">
-  <img src="preview/Sat Sep 28 09_10_37 PM +03 2024.png">
-  <img src="preview/Sat Sep 28 11_25_10 PM +03 2024.png">
+  <img src="preview/first">
+  <img src="preview/second">
+  <img src="preview/third">
+  <img src="preview/fourth">
   <img src='preview/preview.png'>
  <br>
   <br>
@@ -24,8 +24,8 @@
 - **Terminal**: [Kitty](https://sw.kovidgoyal.net/kitty/) - A fast, feature-rich terminal emulator.
 - **Launcher**: [Rofi](https://github.com/DaveDavenport/rofi) - An application launcher and power menu.
 - **Shell**: [Zsh](https://www.zsh.org) - A powerful shell with the [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme.
-- **GTK Theme**: [Arc Dark](https://github.com/horst3180/arc-theme) - A modern GTK theme.
-- **Icons**: [Adwaita](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) - Clean and elegant icons.
+- **GTK Theme**: [Graphite-Dark](https://github.com/vinceliuice/Graphite-gtk-theme) - A modern GTK theme.
+- **Icons**: [Reversal-black-dark](https://github.com/yeyushengfan258/Reversal-icon-them) - Clean and elegant icons.
 - **IDE**: [Neovim](https://neovim.io) - A customizable text editor and IDE.
 - **File Manager**:[Yazi](https://yazi-rs.github.io/) - A lightweight file manager that simplifies file navigation and organization.
 <<<<<<< HEAD

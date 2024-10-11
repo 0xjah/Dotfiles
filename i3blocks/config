@@ -1,0 +1,109 @@
+#[cmus]
+#label=♪
+#command=~/.local/bin/i3blocks/cmus
+#interval=5
+#signal=10
+
+[mpd]
+label=♪ 
+command=~/.local/bin/i3blocks/mpd
+interval=1
+signal=10
+
+[email]
+label=
+command=~/.local/bin/i3blocks/email
+instance=0x2a
+interval=60
+
+#[rss]
+#label=
+#command=~/.local/bin/i3blocks/feed
+#interval=300
+
+[volume-pulseaudio]
+# When using PipeWire
+command=~/.local/bin/i3blocks/volume-pipewire
+# When using PulseAudio
+#command=~/.local/bin/i3blocks/volume-pulseaudio
+interval=10
+signal=10
+
+[brightness]
+#https://github.com/haikarainen/light, https://archlinux.org/packages/community/x86_64/light/
+label=
+command=echo " $(light -G | cut -d'.' -f 1)"
+color=#a3a3a3
+interval=2
+signal=10
+
+[cpu_usage2]
+command=~/.local/bin/i3blocks/cpu_usage2
+markup=pango
+interval=persist
+
+[memory]
+command=~/.local/bin/i3blocks/memory
+interval=3
+
+[bandwidth3]
+command=~/.local/bin/i3blocks/bandwidth2/bandwidth2
+interval=persist
+markup=pango
+
+#[user]
+#command=echo "$(whoami)@$(hostname)"
+#interval=once
+#color=#00D603
+
+[trash]
+command=~/.local/bin/i3blocks/trash
+interval=10
+
+#[pacman-updates]
+#command=~/.local/bin/i3blocks/arch-update --aur --quiet
+#markup=pango
+# Call `pkill -SIGRTMIN+12 i3blocks` to refresh it
+#interval=once
+#signal=12
+#LABEL=
+
+[battery2]
+command=~/.local/bin/i3blocks/battery2 1
+markup=pango
+interval=30
+
+[calendar]
+command=~/.local/bin/i3blocks/rofi-calendar
+interval=1
+DATEFMT=+%a, %d. %B %Y %H:%M
+SHORTFMT=+%H:%M
+HEIGHT=180
+WIDTH=220
+
+[weather]
+command=wget -qO - "https://wttr.in/?format=4" | awk -F ': ' '{print $2}'
+interval=1800
+
+#[keyboard]
+#command=~/.local/bin/i3blocks/keyboard
+#label= 
+#interval=once
+
+[network]
+command=~/.local/bin/i3blocks/network.sh
+interval=10
+signal=11
+
+#[internet]
+#command=~/.local/bin/i3blocks/internet.sh
+#interval=10
+#signal=11
+
+#[shutdown_menu]
+#full_text= 
+#color=#FF0000
+# If you are using FontAwesome, we recommend the power-off icon:
+# http://fontawesome.io/icon/power-off/
+#command=~/.local/bin/i3blocks/shutdown_menu
+

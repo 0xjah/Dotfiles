@@ -1,5 +1,5 @@
 configuration {
-    font: "Hack Nerd Font 13";
+    font: "Terminess Nerd Font 13";
     line-margin: 10;
 
     display-ssh:    "";

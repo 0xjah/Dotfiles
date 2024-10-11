@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack 8
+font pango:Terminess Nerd Font 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -82,7 +82,7 @@ bindsym $mod+n exec kitty nvim
 bindsym $mod+e exec kitty yazi/target/release/yazi
 bindsym $mod+BackSpace exec rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu
 bindsym $mod+Shift+BackSpace exec bash ".config/rofi/rofi-wifi-menu.sh"
-
+bindsym $mod+shift+w exec --no-startup-id feh --randomize --bg-fill ~/Pictures/* 
 ## Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
 bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
@@ -166,40 +166,40 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "一"
+set $ws2 "二"
+set $ws3 "三"
+set $ws4 "四"
+set $ws5 "五"
+set $ws6 "六"
+set $ws7 "七"
+set $ws8 "八"
+set $ws9 "九"
+set $ws10 "十"
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym $mod+1 workspace  $ws1
+bindsym $mod+2 workspace  $ws2
+bindsym $mod+3 workspace  $ws3
+bindsym $mod+4 workspace  $ws4
+bindsym $mod+5 workspace  $ws5
+bindsym $mod+6 workspace  $ws6
+bindsym $mod+7 workspace  $ws7
+bindsym $mod+8 workspace  $ws8
+bindsym $mod+9 workspace  $ws9
+bindsym $mod+0 workspace  $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 # Adjust Brightness
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -239,23 +239,24 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#
-#	font pango:Hack 11
-#	position top
-#        status_command i3blocks
-#        i3bar_command i3bar --transparency
-#
-#	colors {
-#    background #00000000
-#    statusline #839496
-#    focused_workspace #0f1212 #c6c6c6 #0f1212
-#    active_workspace #0f1212 #c6c6c6 #0f1212
-#    inactive_workspace #0f1212 #0f1212 #c6c6c6
-#    urgent_workspace #0f1212 #EA6B66 #fdf6e3
-#  }
-#}
+bar {
+    position bottom
+    font pango:Terminess Nerd Font, FontAwesome 10
+    status_command i3blocks
+    colors {
+        background #000000
+       statusline #dddddd
+        separator #666666
+
+        # class             border  bg      text
+        focused_workspace   #1170a0 #1170a0 #ffffff
+        active_workspace    #333333 #111111 #ffffff
+        inactive_workspace  #333333 #222222 #888888
+        urgent_workspace    #2f343a #900000 #ffffff
+        binding_mode        #2f343a #900000 #ffffff
+   }
+}
 #exec_always killall polybar
-exec_always --no-startup-id feh --bg-fill Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill Pictures/pexels-eberhardgross-691668.jpg
 exec_always --no-startup-id picom
 #exec_always --no-startup-id polybar &
