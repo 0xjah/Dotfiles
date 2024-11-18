@@ -10,9 +10,7 @@ configuration {
     show-icons:     true;
 }
 
-
 @theme "~/.config/rofi/minimal.rasi"
-
 listview {
 	lines: 6;
 	columns: 2;

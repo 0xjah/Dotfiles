@@ -7,32 +7,23 @@ font pango:Terminess Nerd Font 10
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
+## Colors (with pywal)
+#
+# Set colors from Xresources
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color8 #000000
+set_from_resource $color1 i3wm.color1 #f0f0f0
+set_from_resource $color2 i3wm.color2 #f0f0f0
+set_from_resource $color3 i3wm.color5 #f0f0f0
+set_from_resource $color4 i3wm.color6 #f0f0f0
 
-#theme
-set $base           #191724
-set $surface        #1f1d2e
-set $overlay        #26233a
-set $muted          #6e6a86
-set $subtle         #908caa
-set $text           #e0def4
-set $love           #eb6f92
-set $gold           #f6c177
-set $rose           #ebbcba
-set $pine           #31748f
-set $foam           #9ccfd8
-set $iris           #c4a7e7
-set $highlightlow   #21202e
-set $highlightmed   #403d52
-set $highlighthigh  #524f67
-
-# Teming border and Windows --------------
-# target                 title     bg    text   indicator  border
-client.focused           $love     $base $text  $love      $love
-client.focused_inactive  $text     $base $text  $surface    $surface
-client.unfocused         $text     $base $text  $overlay   $overlay
-client.urgent            $text     $base $text  $love      $love
-client.placeholder       $base     $base $text  $overlay   $overlay
-client.background        $base
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $color4     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+client.background       $bg
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -49,12 +40,16 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#set $refresh_i3status killall -SIGUSR1 i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
+#
+# User-added function keys:
+bindsym XF86AudioMute         exec --no-startup-id pamixer -t     && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume  exec --no-startup-id pamixer -d 3   && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer -i 3   && pkill -RTMIN+1 i3block
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -66,9 +61,9 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 bindsym $mod+d exec rofi -show drun
-bindsym $mod+c exec firefox
+bindsym $mod+c exec qutebrowser
 bindsym $mod+n exec kitty nvim
-bindsym $mod+e exec kitty yazi/target/release/yazi
+bindsym $mod+e exec kitty yazi
 bindsym $mod+BackSpace exec rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu
 bindsym $mod+Shift+BackSpace exec bash ".config/rofi/rofi-wifi-menu.sh"
 bindsym $mod+shift+w exec --no-startup-id feh --randomize --bg-fill ~/Pictures/*
@@ -78,7 +73,10 @@ bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow)
 bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
 
 # Gaps
-gaps inner 8
+gaps inner 12
+gaps outer 1
+smart_borders on
+
 #smart_gaps on
 # Set modifier key to Super key
 set $mod Mod4
@@ -154,17 +152,27 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "一"
-set $ws2 "二"
-set $ws3 "三"
-set $ws4 "四"
-set $ws5 "五"
-set $ws6 "六"
-set $ws7 "七"
-set $ws8 "八"
-set $ws9 "九"
-set $ws10 "十"
-
+#set $ws1 "一"
+#set $ws2 "二"
+#set $ws3 "三"
+#set $ws4 "四"
+#set $ws5 "五"
+#set $ws6 "六"
+#set $ws7 "七"
+#set $ws8 "八"
+#set $ws9 "九"
+#set $ws10 "十"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5:塞 "
+set $ws6 "6: "
+set $ws7 "7: "
+set $ws8 "8: "
+set $ws9 "9: "
+set $ws10 "10: "
+set $ws11 "11: "
 # switch to workspace
 bindsym $mod+1 workspace  $ws1
 bindsym $mod+2 workspace  $ws2
@@ -228,24 +236,20 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    position bottom
-    font pango:Terminess Nerd Font, FontAwesome 10
+    position top
+    font pango: FiraCode Nerd Font 10
     status_command i3blocks
-    colors {
-        background #000000
-       statusline #dddddd
-        separator #666666
-
-        # class             border  bg      text
-        focused_workspace   #484848FF #A9A9A9 #000000
-        active_workspace    #333333 #111111 #ffffff
-        inactive_workspace  #333333 #222222 #ffffff
-        urgent_workspace    #2f343a #900000 #ffffff
-        binding_mode        #2f343a #900000 #ffffff
+      colors  {
+		background $color1
+		statusline $fg
+		focused_workspace $bg $color4 $bg
+		active_workspace $color3 $color3 $fg
+		inactive_workspace $color3 $color3 $fg
+		urgent_workspace #d33682 #d33682 #fdf6e3
+         	} 
    }
-}
 
-exec_always --no-startup-id feh --bg-fill ~/Pictures/1275048.jpg
+exec_always --no-startup-id feh --bg-center Pictures/hpgb7265gyed1.png 
 exec_always --no-startup-id picom
+exec --no-startup-id wal -i "$(< "${HOME}/.cache/wal/wal")"
 exec_always --no-startup-id telegram-desktop --restore
-exec_always --nostartup-id

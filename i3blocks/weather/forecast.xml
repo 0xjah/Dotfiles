@@ -1,0 +1,4 @@
+<endOfLife>
+    <endOfLifeDate>2022-02-01</endOfLifeDate>
+    <endOfLifeMessage>After a long period of weekly downtime, the Yr API (forecast.xml/varsel.xml) is now discontinued. You can still access free weather data from MET Norway. Read more in this article: https://developer.yr.no/doc/guides/getting-started-from-forecast-xml/."</endOfLifeMessage>
+</endOfLife>

@@ -13,13 +13,13 @@
   <img src="preview/first">
   <img src="preview/second">
   <img src="preview/third">
-  <img src="preview/fourth">
   <img src='preview/preview.png'>
  <br>
   <br>
 
 ## 🔗 Info
 
+- **Browser**: [QuteBrowser](https://qutebrowser.org/)- A minimal, keyboard-focused web browser built for power users, inspired by Vim.
 - **Window Manager**: [i3](https://i3wm.org) - A dynamic tiling window manager.
 - **Terminal**: [Kitty](https://sw.kovidgoyal.net/kitty/) - A fast, feature-rich terminal emulator.
 - **Launcher**: [Rofi](https://github.com/DaveDavenport/rofi) - An application launcher and power menu.

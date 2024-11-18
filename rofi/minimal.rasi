@@ -12,6 +12,8 @@ configuration {
     delay: 10;
     action: "kb-cancel";
   }
+
+show-icons: true;
 }
 
 * {
