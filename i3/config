@@ -3,7 +3,6 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Terminess Nerd Font 10
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -16,7 +15,6 @@ set_from_resource $color1 i3wm.color1 #f0f0f0
 set_from_resource $color2 i3wm.color2 #f0f0f0
 set_from_resource $color3 i3wm.color5 #f0f0f0
 set_from_resource $color4 i3wm.color6 #f0f0f0
-
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $color4     $fg  $bg       $bg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
@@ -234,22 +232,24 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+#finds out, if available)
 bar {
     position top
-    font pango: FiraCode Nerd Font 10
+    i3bar_command i3bar --transparency
+    font pango: Terminess Nerd Font 15
     status_command i3blocks
       colors  {
-		background $color1
-		statusline $fg
-		focused_workspace $bg $color4 $bg
-		active_workspace $color3 $color3 $fg
-		inactive_workspace $color3 $color3 $fg
+		background #70000000
+		statusline #000000
+		focused_workspace $bg $color4 #000000
+		active_workspace $color3 $color3 $bg
+		inactive_workspace $color3 $color3 $bg
 		urgent_workspace #d33682 #d33682 #fdf6e3
-         	} 
+         	}
    }
-
-exec_always --no-startup-id feh --bg-center Pictures/hpgb7265gyed1.png 
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-center Pictures/hpgb7265gyed1.png
 exec_always --no-startup-id picom
 exec --no-startup-id wal -i "$(< "${HOME}/.cache/wal/wal")"
 exec_always --no-startup-id telegram-desktop --restore
+exec_always --nos-startup-id firefox

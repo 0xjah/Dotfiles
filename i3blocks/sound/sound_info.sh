@@ -23,5 +23,13 @@ else
     fi
 fi
 
-echo "$ICON" "$SOUND_LEVEL" | awk '{ printf(" %s:%3s%% \n", $1, $2) }'
-
+# Mouse scroll actions
+case $BLOCK_BUTTON in
+    4) # Scroll up
+        amixer -q set Master 5%+ ;;
+    5) # Scroll down
+        amixer -q set Master 5%- ;;
+    1) # Left click to toggle mute
+        amixer -q set Master toggle ;;
+esac
+echo  "$ICON" "$SOUND_LEVEL" | awk '{ printf(" %s:%3s%% \n", $1, $2) }'

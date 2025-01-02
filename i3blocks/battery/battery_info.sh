@@ -12,7 +12,7 @@ then
     TIME_LEFT=$(echo "$ACPI_RES" | grep -v "unavailable" | grep -E -o "[0-9]{2}:[0-9]{2}:[0-9]{2}")
     IS_CHARGING=$(echo "$ACPI_RES" | grep -v "unavailable" | awk '{ printf("%s\n", substr($3, 0, length($3)-1) ) }')
 
-    # If there is no 'time left' information (when almost fully charged) we 
+    # If there is no 'time left' information (when almost fully charged) we
     # provide information ourselvs.
     if [ -z "$TIME_LEFT" ]
     then
@@ -24,8 +24,8 @@ then
     #echo "🔋$BAT_LEVEL ⏳$TIME_LEFT "
 
     # Print the short text.
-    echo "BAT: $BAT_LEVEL"
-    
+    echo "[BAT: $BAT_LEVEL]"
+
     # Change the font color, depending on the situation.
     if [ "$IS_CHARGING" = "Charging" ]
     then
