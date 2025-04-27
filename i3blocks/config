@@ -1,0 +1,46 @@
+[mediaplayer]
+command=~/.config/i3blocks/media/mediaplayer
+interval=2
+signal=10
+markup=pango
+#separator=false
+
+#[WEATHER]
+#command=~/.config/i3blocks/weather/weather
+#interval=300
+#color=#FEC925
+#signal=2
+
+[BATTERY]
+command=~/.config/i3blocks/battery/battery_info.sh
+interval=3
+
+#[DISK]
+#command=df -h / | awk '/\//{ printf("  :%4s/%s \n", $4, $2) }'
+#interval=2
+
+#[CPU]
+#command=~/.config/i3blocks/cpu/cpu_info.sh
+#interval=2
+#markup=pango
+
+#[MEM]
+#command=free -h | awk '/Mem:/ { printf("   %5s/%s \n", $3, $2) }'
+#interval=1
+
+[SOUND_BURST]
+command=~/.config/i3blocks/sound/sound_burst.sh
+interval=once
+
+[pulseaudio]
+command=~/.config/i3blocks/sound/pulseaudio.sh
+interval=1
+signal=1
+
+[TIME_DATE]
+command=date +"%A %H:%M"
+interval=1
+
+[colorscheme-picker]
+command=$HOME/.config/i3blocks/script/$BLOCK_NAME -d $HOME/wallpapers
+full_text= BG:

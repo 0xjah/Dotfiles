@@ -1,0 +1,163 @@
+@import "~/.config/bnsplit/cache/wal/colors-rofi-dark.rasi"
+@import "~/.config/bnsplit/colors/colors-variants-solid.rasi"
+@import "~/.config/bnsplit/colors/colors-variants-xray.rasi"
+
+* {
+    font: "JetBrains Mono Italic Bold 16";
+}
+
+window {
+    border: 1px;
+    border-color: @foreground;
+    border-radius: 5px;
+    width: 1000px;
+    height: 600px;
+    background-color: @color-xray2;
+}
+
+mainbox {
+    padding: 0;
+    border-radius: 12px;
+    border: 0px;
+    border-color: @foreground;
+    background-color: transparent;
+    spacing: 10px;
+    children: [ "inputbar", "message", "listview", "mode-switcher" ];
+}
+
+listview {
+    padding: 10px;
+    background-color: transparent;
+    scrollbar: false;
+    spacing: 12px;
+    border: none;
+}
+
+inputbar {
+    padding: 12px;
+    spacing: 0px;
+    background-color: transparent;
+    children: [ "prompt", "textbox-prompt-colon", "entry", "num-filtered-rows", "textbox-num-sep", "num-rows" ];
+}
+
+num-filtered-rows,
+num-rows,
+textbox-num-sep {
+    background-color: transparent;
+    text-color: @color-xray31;
+}
+
+textbox-num-sep {
+    expand: false;
+    str: "/";
+}
+
+prompt {
+    spacing: 0;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+textbox-prompt-colon {
+    str: ":";
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+entry {
+    placeholder: "...";
+    background-color: transparent;
+    placeholder-color: @color-xray29;
+}
+
+message {
+    padding: 1px;
+    background-color: @color-xray2;
+    border-color: @foreground;
+    border: 1px;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px;
+    children: [ textbox ];
+}
+
+textbox {
+    vertical-align: 0.5;
+    horizontal-align: 0;
+    background-color: transparent;
+    font: "JetBrains Mono Italic Bold 12";
+}
+
+element {
+    padding: 4.5px;
+    background-color: transparent;
+    children: [ element-text, element-icon ];
+    border: 0px;
+    border-color: @color-xray30;
+    text-color: @color-solid29;
+    border-radius: 4px;
+}
+
+element.normal.normal {
+    background-color: @color-xray2;
+}
+
+element.normal.active {
+    background-color: @color-solid9;
+    text-color: @color-solid29;
+}
+
+element.alternate.active {
+    background-color: @color-solid9;
+    text-color: @color-solid29;
+}
+
+element.selected.normal {
+    background-color: @color-solid12;
+    text-color: @color-solid29;
+}
+
+element.selected.active {
+    background-color: @color-solid12;
+    text-color: @color-solid29;
+}
+
+element.alternate.normal {
+    background-color: @color-xray2;
+}
+
+mode-switcher {
+    enabled: true;
+    margin: 0 16px 16px 16px;
+    spacing: 24px;
+    background-color: transparent;
+}
+
+button {
+    margin: 0 10px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px;
+    background-color: @color-xray2;
+    border-color: @foreground;
+}
+
+button.selected {
+    cursor: pointer;
+    background-color: @color-solid12;
+    text-color: @color-solid29;
+}
+
+element-icon {
+    size: 1.13em;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: @color-solid29;
+    vertical-align: 0.5;
+    horizontal-align: 0;
+    font: "JetBrains Mono Italic Bold 12";
+}

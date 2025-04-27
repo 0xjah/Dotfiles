@@ -1,0 +1,190 @@
+# Set modifier key to Super (Mod4)
+set $mod Mod4
+
+# Font for window titles and bar
+font pango:JetBrains Mono 10
+
+# Colors (with pywal)
+set_from_resource $term_background background
+set_from_resource $term_foreground foreground
+set_from_resource $term_color0     color0
+set_from_resource $term_color1     color1
+set_from_resource $term_color2     color2
+set_from_resource $term_color3     color3
+set_from_resource $term_color4     color4
+set_from_resource $term_color5     color5
+set_from_resource $term_color6     color6
+set_from_resource $term_color7     color7
+set_from_resource $term_color8     color8
+set_from_resource $term_color9     color9
+set_from_resource $term_color10    color10
+set_from_resource $term_color11    color11
+set_from_resource $term_color12    color12
+set_from_resource $term_color13    color13
+set_from_resource $term_color14    color14
+set_from_resource $term_color15    color15
+#Client colors
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $color4 $fg  $bg        $bg
+client.focused_inactive $bg     $bg     $fg  $bg        $bg
+client.unfocused        $bg     $bg     $fg  $bg        $bg
+client.urgent           $bg     $bg     $fg  $bg        $bg
+client.placeholder      $bg     $bg     $fg  $bg        $bg
+client.background       $bg
+#border color
+set_from_resource $fg i3wm.color5 #f0f0f0
+set_from_resource $bg i3wm.color1 #f0f0f0
+set_from_resource $cbg i3wm.color5 #f0f0f0
+# i3bar configuration
+bar {
+    status_command i3blocks
+    i3bar_command i3bar --transparency
+    modifier none
+    binding_mode_indicator no
+    position top
+    font pango:Terminess Nerd Font 13
+    colors {
+        background #000000
+        statusline $fg
+        focused_workspace $bg $color4 $bg
+        active_workspace $color3 $color3 $fg
+        inactive_workspace $color3 $color3 $fg
+        urgent_workspace #d33682 #d33682 #fdf6e3
+    }
+}
+
+# Autostart applications
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+exec --no-startup-id picom
+exec --no-startup-id clipit
+exec --no-startup-id xrdb -merge $HOME/.Xresources
+exec --no-startup-id feh --bg-center --restore
+exec --no-startup-id wal -i "$(< "${HOME}/.cache/wal/wal")"
+
+# Disable touchpad
+exec --no-startup-id xinput set-prop `xinput --list | awk '/[Tt]ouch[Pp]ad.*pointer/ {print $5}' | sed 's/id=\(.*\)/\1/'` "Device Enabled" 0
+
+# Keybindings for applications
+bindsym $mod+q kill
+bindsym $mod+m bar mode to
+bindsym $mod+Return exec kitty
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+c exec --no-startup-id firefox
+bindsym $mod+n exec --no-startup-id kitty nvim
+bindsym $mod+e exec --no-startup-id kitty yazi
+bindsym $mod+BackSpace exec --no-startup-id rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu
+bindsym $mod+Shift+BackSpace exec --no-startup-id bash ".config/rofi/rofi-wifi-menu.sh"
+bindsym $mod+Shift+w exec --no-startup-id feh --randomize --bg-fill ~/wallpapers/*
+
+# Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+
+# Volume and brightness controls
+bindsym XF86AudioMute exec --no-startup-id pamixer -t && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 3 && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 3 && pkill -RTMIN+1 i3blocks
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+# Window management
+floating_modifier $mod
+tiling_drag modifier titlebar
+gaps inner 12
+gaps outer 3
+#border settings
+default_border pixel 1
+default_floating_border normal
+hide_edge_borders none
+
+# Focus and move windows
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# Layout and split management
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+# Workspaces
+set $ws1 "one"
+set $ws2 "two"
+set $ws3 "three"
+set $ws4 "four"
+set $ws5 "five"
+set $ws6 "six"
+set $ws7 "seven"
+set $ws8 "eight"
+set $ws9 "nine"
+set $ws10 "ten"
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# Move container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# Reload and restart i3
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
+
+# Resize mode
+mode "resize" {
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Change focus between windows using arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window using arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
