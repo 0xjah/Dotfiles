@@ -1,0 +1,33 @@
+[global]
+    monitor = 0
+    follow = keyboard
+    width = (250, 500)
+    height = (0, 750)
+    offset = (17, 26)
+    padding = 5
+    horizontal_padding = 5
+    gap_size = 3
+    transparency = 35
+    frame_width = 1
+    frame_color="#607566"
+    font = Libertinus Mono 11
+    corner_radius = 5
+    min_icon_size = 32
+    max_icon_size = 32
+    format = "<b>%s</b>\n%b"
+
+[urgency_low]
+    foreground = "#0A2E15"
+    background = "#68B351"
+    timeout = 3
+
+[urgency_normal]
+    foreground = "#0A2E15"
+    background = "#8FCE61"
+    timeout = 5
+
+[urgency_critical]
+    background = "#C1CAC4"
+    foreground = "#0A2E15"
+    frame_color = "#ff0000"
+    timeout = 15

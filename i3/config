@@ -1,165 +1,146 @@
+# Set modifier key to Super (Mod4)
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:Terminess Nerd Font 10
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-## Colors (with pywal)
-#
-# Set colors from Xresources
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color8 #000000
-set_from_resource $color1 i3wm.color1 #f0f0f0
-set_from_resource $color2 i3wm.color2 #f0f0f0
-set_from_resource $color3 i3wm.color5 #f0f0f0
-set_from_resource $color4 i3wm.color6 #f0f0f0
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $color4     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
-client.background       $bg
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
+bindsym $mod+x exec ~/.config/i3/lock.sh
+
+# Font for window titles and bar
+font pango:Iosevka Nerd Font 12
+# Load pywal colors from Xresources
+exec --no-startup-id xrdb -merge ~/.Xresources
+
+# Set from Xresources
+set_from_resource $bg     background
+set_from_resource $fg     foreground
+set_from_resource $color0 color0
+set_from_resource $color1 color1
+set_from_resource $color2 color2
+set_from_resource $color3 color3
+set_from_resource $color4 color4
+set_from_resource $color5 color5
+set_from_resource $color6 color6
+set_from_resource $color7 color7
+set_from_resource $color8 color8
+set_from_resource $color9 color9
+set_from_resource $color10 color10
+set_from_resource $color11 color11
+set_from_resource $color12 color12
+set_from_resource $color13 color13
+set_from_resource $color14 color14
+set_from_resource $color15 color15
+
+# i3 window border colors
+# class                 border    background text     indicator child_border
+client.focused          $color6   $color4    $fg      $color4   $color6
+client.focused_inactive $color0   $bg        $fg      $bg       $color0
+client.unfocused        $color0   $bg        $fg      $bg       $color0
+client.urgent           $color1   $color1    $fg      $color1   $color1
+client.placeholder      $color8   $bg        $fg      $bg       $color8
+
+# Remove borders for all windows
+for_window [class=".*"] border pixel 0
+
+#color
+set_from_resource $background  i3wm.color0 #f0f0f0
+set_from_resource $text        i3wm.color2 #f0f0f0
+set_from_resource $inactive    i3wm.color4 #f0f0f0
+set_from_resource $error       i3wm.color5 #f0f0f0
+
+# i3bar configuration
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+#bar {
+#    status_command i3blocks
+#    separator_symbol "::"
+#    position top
+#    colors {
+#	separator		$text
+#	background		$background
+#	    statusline		$text
+#	focused_workspace	$text		$text		$background
+#	    active_workspace	$inactive	$inactive	$background
+#	    inactive_workspace	$background	$background	$text
+#	    urgent_workspace	$error		$error		$background
+#    }    
+#}
+
+# Autostart applications
 exec --no-startup-id dex --autostart --environment i3
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+exec --no-startup-id clipit
+exec --no-startup-id xrdb -merge $HOME/.Xresources
+exec --no-startup-id feh --bg-center --restore
+exec --no-startup-id wal -i "$(< "${HOME}/.cache/wal/wal")"
+exec --no-startup-id nm-applet --restore  #NetworkManager Applet
+exec --no-startup-id xfce4-power-manager --restore # XfcePowerManager
+exec --no-startup-id kdeconnect-indicator --restore # KDE Connect
+exec --no-startup-id qbittorrent --restore #qBittorrent
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd # xfce4 notifications
+exec --no-startup-id  blueman-manager #Bluetooth manager
+exec --no-startup-id /usr/lib64/libexec/polkit-kde-authentication-agent-1 # Polkit Agent
+exec --no-startup-id copyq  #CopyQ
+exec telegram-desktop --restore
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd # xfce4 notifications
+exec --no-startup-id vesktop  #Discord
+exec --no-startup-id slack  #Slack
+#exec --no-startup-id picom --backend glx --log-level DEBUG --config ~/.config/picom/picom.conf
 
-# Use pactl to adjust volume in PulseAudio.
-#set $refresh_i3status killall -SIGUSR1 i3status
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-#
-# User-added function keys:
-bindsym XF86AudioMute         exec --no-startup-id pamixer -t     && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume  exec --no-startup-id pamixer -d 3   && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer -i 3   && pkill -RTMIN+1 i3block
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
 
-# move tiling windows via drag & drop by left-clicking into the title bar,
-# or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+# Disable touchpad
+exec --no-startup-id xinput set-prop `xinput --list | awk '/[Tt]ouch[Pp]ad.*pointer/ {print $5}' | sed 's/id=\(.*\)/\1/'` "Device Enabled" 0
 
-#pewpew
-bindsym $mod+Return exec kitty
+# Keybindings for applications
 bindsym $mod+q kill
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+c exec qutebrowser
-bindsym $mod+n exec kitty nvim
-bindsym $mod+e exec kitty yazi
-bindsym $mod+BackSpace exec rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu
-bindsym $mod+Shift+BackSpace exec bash ".config/rofi/rofi-wifi-menu.sh"
-bindsym $mod+shift+w exec --no-startup-id feh --randomize --bg-fill ~/Pictures/*
-## Screenshots
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+bindsym $mod+m bar mode to
+bindsym $mod+Return exec kitty
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+c exec --no-startup-id firefox
+bindsym $mod+n exec --no-startup-id kitty nvim
+bindsym $mod+e exec --no-startup-id kitty yazi
+bindsym $mod+BackSpace exec --no-startup-id rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu
+bindsym $mod+Shift+BackSpace exec --no-startup-id bash ".config/rofi/rofi-wifi-menu.sh"
+bindsym $mod+Shift+w exec --no-startup-id feh --randomize --bg-fill ~/wallpapers/*
 
-# Gaps
-gaps inner 12
-gaps outer 1
-smart_borders on
+# Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/media/screenshots/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/media/screenshots/$(date).png"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/media/screenshots/$(date +"%R-%m_%d_%Y").png"
 
-#smart_gaps on
-# Set modifier key to Super key
-set $mod Mod4
+# Volume and brightness controls
+bindsym XF86AudioMute exec --no-startup-id pamixer -t && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 3 && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 3 && pkill -RTMIN+1 i3blocks
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-# Execute picom composite manager
-exec picom
-
-# Execute Clipit Clipboard Manager
-exec clipit
-
-# Load .Xresources on start
-exec xrdb -merge $HOME/.Xresources
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-#font pango:Fira Code 11
-font pango: Overpass Light 11
-for_window [class="^.*"] border pixel 0
-
-# Use Mouse+$mod to drag floating windows to their wanted position
+# Window management
 floating_modifier $mod
-# Disable touchpad in Thinkpad x260 || x390
-exec xinput set-prop `xinput --list | awk '/[Tt]ouch[Pp]ad.*pointer/ {print $5}' | sed 's/id=\(.*\)/\1/'` "Device Enabled" 0
-# change focus
+tiling_drag modifier titlebar
+gaps inner 5
+
+# popups control 
+popup_during_fullscreen smart
+
+# Focus and move windows
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
+# Layout and split management
 bindsym $mod+h split h
-
-# split in vertical orientation
 bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-#set $ws1 "一"
-#set $ws2 "二"
-#set $ws3 "三"
-#set $ws4 "四"
-#set $ws5 "五"
-#set $ws6 "六"
-#set $ws7 "七"
-#set $ws8 "八"
-#set $ws9 "九"
-#set $ws10 "十"
+#Workspaces Variables
 set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
@@ -171,19 +152,24 @@ set $ws8 "8: "
 set $ws9 "9: "
 set $ws10 "10: "
 set $ws11 "11: "
-# switch to workspace
-bindsym $mod+1 workspace  $ws1
-bindsym $mod+2 workspace  $ws2
-bindsym $mod+3 workspace  $ws3
-bindsym $mod+4 workspace  $ws4
-bindsym $mod+5 workspace  $ws5
-bindsym $mod+6 workspace  $ws6
-bindsym $mod+7 workspace  $ws7
-bindsym $mod+8 workspace  $ws8
-bindsym $mod+9 workspace  $ws9
-bindsym $mod+0 workspace  $ws10
 
-# move focused container to workspace
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+p workspace $ws11
+
+#Assign Programs to Workspaces
+
+
+# Move container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -194,62 +180,37 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
-# Adjust Brightness
-bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-# reload the configuration file
+bindsym $mod+Shift+p move container to workspace $ws11
+
+# Reload and restart i3
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+# Resize mode
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-#finds out, if available)
-bar {
-    position top
-    i3bar_command i3bar --transparency
-    font pango: Terminess Nerd Font 15
-    status_command i3blocks
-      colors  {
-		background #70000000
-		statusline #000000
-		focused_workspace $bg $color4 #000000
-		active_workspace $color3 $color3 $bg
-		inactive_workspace $color3 $color3 $bg
-		urgent_workspace #d33682 #d33682 #fdf6e3
-         	}
-   }
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-center Pictures/hpgb7265gyed1.png
-exec_always --no-startup-id picom
-exec --no-startup-id wal -i "$(< "${HOME}/.cache/wal/wal")"
-exec_always --no-startup-id telegram-desktop --restore
-exec_always --nos-startup-id firefox
+# Change focus between windows using arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window using arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right

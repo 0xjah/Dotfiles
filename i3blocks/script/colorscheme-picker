@@ -22,7 +22,7 @@ rofi_colors=(
 )
 rofi_options=(
 	-width -30 \
-	-location 3 \
+	-location 0 \
 	-bw 2 \
 	-dmenu -i \
 	-p "${rofi_title}" "${rofi_colors}" \
@@ -74,6 +74,6 @@ selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launch_rofi[@]}")"
 # Apply selected wallpaper
 #
 if [ ! -z $selection ]; then
-	exec `wal $pywal_options "${menu[${selection}]}"`
+	exec `wal $pywal_options "${menu[${selection}]}" -o "$HOME/.config/dunst/launchdunst.sh"`
 fi
 

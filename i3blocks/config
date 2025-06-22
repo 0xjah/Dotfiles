@@ -1,47 +1,38 @@
-[WEATHER_SIGNALER]
-command=~/.config/i3blocks/weather/weather_signaler
-interval=once
+# CPU usage Block
+[cpu]
+command=top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}'
+interval=5
+label=CPU 
 
-#[WEATHER]
-#command=~/.config/i3blocks/script/weather
-#interval=300
-#color=#FEC925
-#signal=2
+# Battery Block
+[battery]
+command=awk '{sum+=$1; count++} END {if (count>0) print int(sum/count)}' < <(acpi -b | grep -o '[0-9]\+%' | tr -d '%')
+interval=30
+label=BAT 
 
-#[weather]
-#command=wget -qO - "https://wttr.in/?format=4" | awk -F ': ' '{print $2}'
-#interval=1800
+# Memory Usage Block
+[memory]
+command=free -h | awk '/^Mem/ {print $3 "/" $2}'
+interval=10
+label=MEM 
 
-#[DISK]
-#command=df -h / | awk '/\//{ printf("  :%4s/%s \n", $4, $2) }'
-#interval=2
-
-[BATTERY]
-command=~/.config/i3blocks/battery/battery_info.sh
-interval=3
-
-#[CPU]
-#full_text= CPU:  0.00% @ +00.0°C
-#command=~/.config/i3blocks/cpu/cpu_info.sh
-#interval=repeat
-
-#[MEM]
-#command=free -h | awk '/Mem:/ { printf("   %5s/%s \n", $3, $2) }'
-#interval=1
-
-[SOUND_BURST]
-command=~/.config/i3blocks/sound/sound_burst.sh
-interval=once
-
-[SOUND]
-command=~/.config/i3blocks/sound/sound_info.sh
-interval=0
-signal=1
-
-[TIME_DATE]
-command=date +" %a / %H:%M:%S"
+# Volume Block
+[volume]
+command=pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'
 interval=1
+label=VOL 
+
+[brightness]
+command=brightnessctl | grep -oP '\(\K[0-9]+(?=%)'
+interval=1
+signal=1
+label=BRI 
+# Date/Time Block
+[time]
+command=date "+%Y-%m-%d %H:%M:%S "
+interval=1
+label=TM 
 
 [colorscheme-picker]
-command=$HOME/.config/i3blocks/script/$BLOCK_NAME -d $HOME/wallpapers
-full_text= BG:
+command=$HOME/.config/i3blocks/script/$BLOCK_NAME -d $HOME/media/wallpapers
+full_text=   
