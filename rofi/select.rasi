@@ -1,0 +1,138 @@
+@import "~/.config/bnsplit/cache/wal/colors-rofi-dark.rasi"
+
+* {
+    font: "JetBrains Mono Italic 12";
+}
+
+window {
+    width: 1200px;
+    height: 450px;
+    border-radius: 24px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid;
+    border-color: @foreground;
+    background-color: @background;
+}
+
+mainbox {
+    spacing: 10px;
+    margin: 0px;
+    padding: 30px;
+    background-color: transparent;
+    children: [ "inputbar", "message", "listview", "mode-switcher" ];
+}
+
+inputbar {
+    enabled: true;
+    spacing: 10px;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    text-color: @foreground;
+    children: [ "prompt", "textbox-prompt-colon", "entry" ];
+}
+
+prompt {
+    enabled: true;
+    text-color: @foreground;
+}
+
+textbox-prompt-colon {
+    enabled: true;
+    expand: false;
+    str: ":";
+    background-color: inherit;
+    text-color: inherit;
+}
+
+entry {
+    enabled: true;
+    cursor: text;
+    placeholder: "";
+}
+
+listview {
+    enabled: true;
+    columns: 1;
+    lines: 6;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    spacing: 5px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px solid;
+}
+
+element {
+    enabled: true;
+    spacing: 8px;
+    margin: 0px;
+    padding: 8px;
+    border: 0px solid;
+    border-radius: 4px;
+    background-color: transparent;
+    text-color: @foreground;
+    cursor: pointer;
+}
+
+element normal.normal {
+    background-color: @background;
+    text-color: @foreground;
+}
+element normal.active {
+    background-color: @background;
+    text-color: @foreground;
+}
+element selected.normal {
+    background-color: @foreground;
+    text-color: @background;
+}
+element selected.active {
+    background-color: @background;
+    text-color: @foreground;
+}
+element alternate.normal {
+    background-color: @background;
+    text-color: @foreground;
+}
+element alternate.active {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+mode-switcher {
+    enabled: true;
+    spacing: 10px;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+button {
+    padding: 8px;
+    border: 0px solid;
+    background-color: @background;
+    cursor: pointer;
+}
+
+message {
+    enabled: true;
+    margin: 0px;
+    padding: 0px;
+    border: 0px solid;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+textbox {
+    padding: 8px;
+    border: 0px solid;
+    background-color: @background;
+    text-color: @foreground;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+    placeholder-color: @foreground;
+}

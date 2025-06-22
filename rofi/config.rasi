@@ -18,4 +18,5 @@ listview {
 
 window {
 	width: 30%;
+  transparency: true;
 }

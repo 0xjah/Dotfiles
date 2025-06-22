@@ -8,12 +8,24 @@
  */
 
 configuration {
+  font: "Iosevka Nerd Font Medium 12";
+
+  drun {
+    display-name: "[^.^]";
+  }
+
+  run {
+    display-name: "[°.°]";
+  }
+
+  window {
+    display-name: "[*.*]";
+  }
+
   timeout {
     delay: 10;
     action: "kb-cancel";
   }
-
-show-icons: true;
 }
 
 * {

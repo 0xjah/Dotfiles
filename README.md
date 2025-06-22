@@ -19,18 +19,28 @@
 
 ## 🔗 Info
 
-- **Browser**: [QuteBrowser](https://qutebrowser.org/)- A minimal, keyboard-focused web browser built for power users, inspired by Vim.
-- **Window Manager**: [i3](https://i3wm.org) - A dynamic tiling window manager.
-- **Terminal**: [Kitty](https://sw.kovidgoyal.net/kitty/) - A fast, feature-rich terminal emulator.
-- **Launcher**: [Rofi](https://github.com/DaveDavenport/rofi) - An application launcher and power menu.
-- **Shell**: [Zsh](https://www.zsh.org) - A powerful shell with the [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme.
-- **GTK Theme**: [Graphite-Dark](https://github.com/vinceliuice/Graphite-gtk-theme) - A modern GTK theme.
-- **Icons**: [Reversal-black-dark](https://github.com/yeyushengfan258/Reversal-icon-them) - Clean and elegant icons.
-- **IDE**: [Neovim](https://neovim.io) - A customizable text editor and IDE.
-- **File Manager**:[Yazi](https://yazi-rs.github.io/) - A lightweight file manager that simplifies file navigation and organization.
-<<<<<<< HEAD
-- **Window Manager**:[LY](https://github.com/fairyglade/ly) - A TUI display manager.
-- **Bootloader**:[GRUB](https://www.gnu.org/software/grub/) - A multiboot loader with theme based on NieR:Automata.
+- **Browser**: [QuteBrowser](https://qutebrowser.org/) – A minimal, keyboard-focused web browser inspired by Vim.
+- **Window Manager**: [i3](https://i3wm.org) – A dynamic tiling window manager.
+- **Terminals**: 
+  - [Kitty](https://sw.kovidgoyal.net/kitty/) – A fast, feature-rich terminal emulator.
+  - [Alacritty](https://github.com/alacritty/alacritty) – A GPU-accelerated terminal emulator.
+- **Launcher**: [Rofi](https://github.com/DaveDavenport/rofi) – Application launcher and power menu.
+- **Shell**: [Zsh](https://www.zsh.org) + [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme.
+- **GTK Theme & Config**: [Graphite-Dark](https://github.com/vinceliuice/Graphite-gtk-theme) + custom GTK-3.0 settings.
+- **Icons**: [Reversal-black-dark](https://github.com/yeyushengfan258/Reversal-icon-them)
+- **IDE**: [Neovim](https://neovim.io)
+- **File Manager**: [Yazi](https://yazi-rs.github.io/)
+- **Display Manager**: [LY](https://github.com/fairyglade/ly)
+- **Bootloader**: [GRUB](https://www.gnu.org/software/grub/) (NieR:Automata themed)
+- **Status Bars & Notifications**:
+  - [i3blocks](https://github.com/vivien/i3blocks) – Status bar for i3.
+  - [Polybar](https://github.com/polybar/polybar) – Highly customizable status bar.
+  - [Dunst](https://dunst-project.org/) – Lightweight notification daemon.
+- **System Info Tools**:
+  - [Neofetch](https://github.com/dylanaraps/neofetch) – CLI system info tool.
+  - [Fastfetch](https://github.com/LinusDierheimer/fastfetch) – Faster alternative to Neofetch.
+- **Media Player**: [MPV](https://mpv.io/)
+- **Wallpapers**: Collection including "wallpaper"
 =======
 ## Installation
 ```bash
