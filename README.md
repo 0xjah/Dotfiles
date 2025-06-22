@@ -10,9 +10,9 @@
   <br>
   <br>
   <h1 align="center">PREVIEW :)</h1>
-  <img src="preview/first1">
-  <img src="preview/second2">
-  <img src="preview/third3">
+  <img src="preview/first">
+  <img src="preview/second">
+  <img src="preview/third">
   <img src='preview/preview.png'>
  <br>
   <br>
