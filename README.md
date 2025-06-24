@@ -17,9 +17,9 @@
  <br>
   <br>
 
-## 🔗 Info
+## Info
 
-- **Browser**: [QuteBrowser](https://qutebrowser.org/) – A minimal, keyboard-focused web browser inspired by Vim.
+- **Browser**: [Firefox](https://mozilla.org/) – Hardened settings with [Arkenfox](https://github.com/arkenfox/user.js/),and themed with [Pywalfox](https://github.com/Frewacom/pywalfox).
 - **Window Manager**: [i3](https://i3wm.org) – A dynamic tiling window manager.
 - **Terminals**: 
   - [Kitty](https://sw.kovidgoyal.net/kitty/) – A fast, feature-rich terminal emulator.
