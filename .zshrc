@@ -4,6 +4,11 @@ fi
 
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
+export CHROME_EXECUTABLE=/usr/bin/chromium
+export ANDROID_SDK_ROOT=/opt/android-sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+export PATH=$HOME/.config/rofi/scripts:$PATH
+
 ZSH_THEME="powerlevel10k/powerlevel10k" 
 
 plugins=(
@@ -50,3 +55,5 @@ alias vhosts="sudo nvim /etc/hosts"
 alias venv="nvim .env"
 alias server="python3 -m http.server 8080"
 unsetopt BEEP
+eval "$(starship init zsh)"
+eval "$(starship init zsh)"

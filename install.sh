@@ -1,78 +1,161 @@
-#!/bin/bash
 
-# Define source directories
-SRC_I3="$HOME/Dotfiles/i3"
-SRC_I3BLOCKS="$HOME/Dotfiles/i3blocks"
-SRC_KITTY="$HOME/Dotfiles/kitty"
-SRC_NEOFETCH="$HOME/Dotfiles/neofetch"
-SRC_ROFI="$HOME/Dotfiles/rofi"
-SRC_YORHA="$HOME/Dotfiles/yorha-1920x1080"
-SRC_ZSHRC="$HOME/Dotfiles/.zshrc"
-SRC_BG="$HOME/Dotfiles/wallpaper"
+#!/usr/bin/env bash
+set -euo pipefail
 
-# New added configs
-SRC_ALACRITTY="$HOME/Dotfiles/alacritty"
-SRC_DUNST="$HOME/Dotfiles/dunst"
-SRC_POLYBAR="$HOME/Dotfiles/polybar"
-SRC_FASTFETCH="$HOME/Dotfiles/fastfetch"
-SRC_GTK="$HOME/Dotfiles/gtk-3.0"
-SRC_NVIM="$HOME/Dotfiles/nvim"
-SRC_MPV="$HOME/Dotfiles/mpv"
+echo "Starting Arch Linux setup..."
 
-# Define destination directories
+# ========== XDG user dirs ==========
+export XDG_DESKTOP_DIR="$HOME/proj"
+export XDG_DOWNLOAD_DIR="$HOME/dl"
+export XDG_DOCUMENTS_DIR="$HOME/docs"
+export XDG_PICTURES_DIR="$HOME/media"
+export XDG_TEMPLATES_DIR="$HOME/tmp"
+export XDG_PUBLICSHARE_DIR="$HOME/Mail"
+
+mkdir -p "$XDG_DESKTOP_DIR" "$XDG_DOWNLOAD_DIR" "$XDG_DOCUMENTS_DIR" \
+         "$XDG_PICTURES_DIR" "$XDG_TEMPLATES_DIR" "$XDG_PUBLICSHARE_DIR"
+xdg-user-dirs-update
+
+# ========== Install yay if missing ==========
+if ! command -v yay &>/dev/null; then
+    echo "Installing yay..."
+    sudo pacman -S --noconfirm --needed base-devel git
+    git clone https://aur.archlinux.org/yay.git /tmp/yay
+    cd /tmp/yay && makepkg -si --noconfirm && cd - && rm -rf /tmp/yay
+fi
+
+# ========== Package installation ==========
+PACKAGES=(
+  base base-devel linux linux-firmware linux-headers efibootmgr grub grub-customizer intel-ucode
+
+  i3-wm i3blocks i3status i3lock picom dmenu arandr polybar rofi feh lxappearance xwallpaper xclip xss-lock xdotool
+  lightdm lightdm-gtk-greeter
+  xfce4-appfinder xfce4-panel xfce4-power-manager xfce4-session xfce4-settings xfce4-terminal xfconf xfdesktop xfwm4
+
+  noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-hack-nerd ttf-iosevka-nerd ttf-jetbrains-mono-nerd
+  bibata-cursor-theme-bin layan-gtk-theme-git papirus-icon-theme gtk-engine-murrine
+
+  zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions cowsay lolcat fastfetch neofetch
+  powerlevel10k
+
+  mpv moc-pulse maim playerctl pamixer pavucontrol
+
+  firefox chromium libreoffice-fresh electrum monero monero-gui
+
+  git neovim vim code-marketplace visual-studio-code-bin cmake clang gdb make meson ninja
+  go python-pip python-certifi python-requests python-numpy python-pywal luarocks npm
+
+  android-sdk android-sdk-platform-tools android-sdk-build-tools android-tools android-sdk-cmdline-tools-latest android-emulator
+
+  wireshark-qt burpsuite ghidra hashcat nmap gobuster metasploit packettracer
+
+  bat exa fd fzf htop tmux tree unzip unrar wget rsync ascii-image-converter-git gparted smartmontools usbutils bpf dysk read-edid
+
+  networkmanager network-manager-applet iwd openvpn kdeconnect
+
+  virtualbox docker docker-compose usbip
+
+  qbittorrent telegram-desktop slack-desktop steam ollama msmtp neomutt isync pass notify-osd
+)
+
+echo "Installing ${#PACKAGES[@]} packages..."
+yay -S --noconfirm "${PACKAGES[@]}"
+
+# ========== Dotfiles ==========
+DOT="$HOME/Dotfiles"
 DEST_CONFIG="$HOME/.config"
-DEST_GRUB="/boot/grub/themes"
-DEST_HOME="$HOME"
+mkdir -p "$DEST_CONFIG" "$XDG_PICTURES_DIR/wallpapers"
 
-# Create necessary directories
-mkdir -p "$DEST_CONFIG/i3" "$DEST_CONFIG/i3blocks" "$DEST_CONFIG/kitty" "$DEST_CONFIG/neofetch" \
-"$DEST_CONFIG/rofi" "$DEST_CONFIG/alacritty" "$DEST_CONFIG/dunst" "$DEST_CONFIG/polybar" \
-"$DEST_CONFIG/fastfetch" "$DEST_CONFIG/gtk-3.0" "$DEST_CONFIG/nvim" "$DEST_CONFIG/mpv" \
-"$DEST_CONFIG/yazi" "$DEST_HOME/Pictures/wallpapers"
+declare -A FILES=(
+  ["$DOT/i3"]="$DEST_CONFIG/i3"
+  ["$DOT/i3blocks"]="$DEST_CONFIG/i3blocks"
+  ["$DOT/kitty"]="$DEST_CONFIG/kitty"
+  ["$DOT/neofetch"]="$DEST_CONFIG/neofetch"
+  ["$DOT/rofi"]="$DEST_CONFIG/rofi"
+  ["$DOT/alacritty"]="$DEST_CONFIG/alacritty"
+  ["$DOT/dunst"]="$DEST_CONFIG/dunst"
+  ["$DOT/polybar"]="$DEST_CONFIG/polybar"
+  ["$DOT/fastfetch"]="$DEST_CONFIG/fastfetch"
+  ["$DOT/gtk-3.0"]="$DEST_CONFIG/gtk-3.0"
+  ["$DOT/nvim"]="$DEST_CONFIG/nvim"
+  ["$DOT/mpv"]="$DEST_CONFIG/mpv"
+  ["$DOT/wallpaper"]="$XDG_PICTURES_DIR/wallpapers"
 
-# Since /boot/grub/themes needs root, create with sudo
-sudo mkdir -p "$DEST_GRUB"
+  ["$DOT/.p10k.zsh"]="$HOME/.p10k.zsh"
+  ["$DOT/.zshrc"]="$HOME/.zshrc"
 
-# Copy function with optional sudo
-copy_files() {
-    local src=$1
-    local dest=$2
-    local name=$3
-    local use_sudo=$4
+  ["$DOT/xfce4"]="$DEST_CONFIG/xfce4"
+  ["$DOT/Thunar"]="$DEST_CONFIG/Thunar"
 
-    echo "Copying $name..."
-    if [[ "$use_sudo" == "true" ]]; then
-        if sudo cp -r "$src"/* "$dest"; then
-            echo "Successfully copied $name to $dest"
-        else
-            echo "Error copying $name to $dest"
-        fi
-    else
-        if cp -r "$src"/* "$dest"; then
-            echo "Successfully copied $name to $dest"
-        else
-            echo "Error copying $name to $dest"
-        fi
-    fi
-}
+  ["$DOT/tmux"]="$DEST_CONFIG/tmux"
+  ["$DOT/qutebrowser"]="$DEST_CONFIG/qutebrowser"
+)
 
-echo "Starting the installation of configuration files..."
+echo "Copying dotfiles..."
+for src in "${!FILES[@]}"; do
+  dest="${FILES[$src]}"
+  if [[ -d "$src" ]]; then
+    mkdir -p "$dest"
+    cp -r "$src"/* "$dest"
+    echo "Copied directory: $src → $dest"
+  elif [[ -f "$src" ]]; then
+    mkdir -p "$(dirname "$dest")"
+    cp "$src" "$dest"
+    echo "Copied file: $src → $dest"
+  else
+    echo "Missing: $src"
+  fi
+done
 
-copy_files "$SRC_I3" "$DEST_CONFIG/i3" "i3 config" false
-copy_files "$SRC_I3BLOCKS" "$DEST_CONFIG/i3blocks" "i3blocks config" false
-copy_files "$SRC_KITTY" "$DEST_CONFIG/kitty" "kitty config" false
-copy_files "$SRC_NEOFETCH" "$DEST_CONFIG/neofetch" "neofetch config" false
-copy_files "$SRC_ROFI" "$DEST_CONFIG/rofi" "rofi config" false
-copy_files "$SRC_ALACRITTY" "$DEST_CONFIG/alacritty" "alacritty config" false
-copy_files "$SRC_DUNST" "$DEST_CONFIG/dunst" "dunst config" false
-copy_files "$SRC_POLYBAR" "$DEST_CONFIG/polybar" "polybar config" false
-copy_files "$SRC_FASTFETCH" "$DEST_CONFIG/fastfetch" "fastfetch config" false
-copy_files "$SRC_GTK" "$DEST_CONFIG/gtk-3.0" "gtk-3.0 config" false
-copy_files "$SRC_NVIM" "$DEST_CONFIG/nvim" "nvim config" false
-copy_files "$SRC_MPV" "$DEST_CONFIG/mpv" "mpv config" false
-copy_files "$SRC_YORHA" "$DEST_GRUB" "yorha theme" true
-copy_files "$SRC_ZSHRC" "$DEST_HOME/.zshrc" ".zshrc" false
-copy_files "$SRC_BG" "$DEST_HOME/Pictures/wallpapers" "wallpaper" false
+# ========== GRUB Theme ==========
+GRUB_THEME_SRC="$DOT/yorha-1920x1080"
+GRUB_THEME_DEST="/boot/grub/themes/yorha"
+sudo mkdir -p "$GRUB_THEME_DEST"
+sudo cp -r "$GRUB_THEME_SRC"/* "$GRUB_THEME_DEST"
 
-echo "All files have been copied successfully!"
+if ! grep -q "GRUB_THEME=" /etc/default/grub; then
+  echo "GRUB_THEME=\"$GRUB_THEME_DEST/theme.txt\"" | sudo tee -a /etc/default/grub
+else
+  sudo sed -i "s|^GRUB_THEME=.*|GRUB_THEME=\"$GRUB_THEME_DEST/theme.txt\"|" /etc/default/grub
+fi
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# ========== Set Zsh with Powerlevel10k ==========
+echo "Configuring Zsh with Powerlevel10k..."
+chsh -s "$(which zsh)"
+
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+  echo "Installing oh-my-zsh..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
+if [[ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]]; then
+  echo "Installing Powerlevel10k theme..."
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+fi
+
+# ========== Wallpaper ==========
+WALLPAPER=$(find "$XDG_PICTURES_DIR/wallpapers" -type f | head -n 1)
+if command -v feh &>/dev/null && [[ -f "$WALLPAPER" ]]; then
+  echo "Setting wallpaper..."
+  feh --bg-fill "$WALLPAPER"
+fi
+
+# ========== Enable Services ==========
+echo "Enabling services..."
+sudo systemctl enable --now lightdm docker NetworkManager bluetooth
+
+sudo usermod -aG docker "$USER"
+
+# ========== Audio Setup ==========
+echo "Configuring PipeWire..."
+sudo mkdir -p /etc/pipewire
+sudo cp /usr/share/pipewire/{client,minimal,pipewire}.conf /etc/pipewire/
+systemctl --user enable --now pipewire pipewire-pulse wireplumber
+
+# ========== Final Steps ==========
+echo "System setup complete. Recommended next steps:"
+echo "1. Reboot your system"
+echo "2. Run 'p10k configure' to set up your prompt"
+echo "3. Install VS Code extensions from your backup"
 
