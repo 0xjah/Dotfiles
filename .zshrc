@@ -4,6 +4,9 @@ fi
 
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
+export CHROME_EXECUTABLE=/usr/bin/chromium
+export PATH=$HOME/.config/rofi/scripts:$PATH
+
 ZSH_THEME="powerlevel10k/powerlevel10k" 
 
 plugins=(
@@ -15,10 +18,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
 
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
