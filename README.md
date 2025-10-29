@@ -13,7 +13,7 @@
   <img src="preview/first">
   <img src="preview/second">
   <img src="preview/third">
-  <img src='preview/preview.png'>
+  <img src='preview/Showcase.gif'>
  <br>
   <br>
 
