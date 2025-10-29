@@ -17,14 +17,6 @@
  <br>
   <br>
 
-# Dotfiles — Professional Installation & Configuration
-
-**Repository:** collection of user configuration files and assets (i3, polybar, kitty, alacritty, dunst, rofi, neovim, themes, wallpapers, etc.)  
-**Maintainer:** Original author of the repo (kept attribution)  
-**Generated:** 20251029T200051Z
-
----
-
 ## Project overview
 
 This repository bundles a curated set of configuration files, themes, and assets to provide a ready-to-use, opinionated desktop environment based on i3 / polybar and related tools. The goal is to make a reproducible, easily deployable environment on Unix-like systems.
@@ -32,7 +24,7 @@ This repository bundles a curated set of configuration files, themes, and assets
 **Included components**
 - Window manager: `i3`
 - Status bars: `polybar`, `i3blocks`
-- Terminal emulators: `kitty`, `alacritty`
+- Terminal emulators: `kitty`
 - Shell: `zsh` (`.zshrc`)
 - Editor: `nvim` (Neovim configuration)
 - Notification daemon: `dunst`
@@ -40,7 +32,7 @@ This repository bundles a curated set of configuration files, themes, and assets
 - Rofi themes and configs
 - Fastfetch / Neofetch configs
 - GTK theme and icon assets
-- GRUB theme (yorha / hollow-knight-grub-theme)
+- GRUB theme (hollow-knight-grub-theme)
 - Wallpapers and preview assets
 
 ---
@@ -71,11 +63,11 @@ git clone https://github.com/0xjah/Dotfiles.git ~/Dotfiles
 cd ~/Dotfiles
 
 # make installer executable and run (dry-run first)
-chmod +x install_improved.sh
-./install_improved.sh --dry-run
+chmod +x install.sh
+./install.sh --dry-run
 
 # if output looks good, run for real
-./install_improved.sh --backup --symlink
+./install.sh --backup --symlink
 ```
 
 ---
@@ -96,22 +88,22 @@ chmod +x install_improved.sh
 
 - Create symlinks with backup:
 ```bash
-./install_improved.sh --backup --symlink
+./install.sh --backup --symlink
 ```
 
 - Copy files (default), create backups:
 ```bash
-./install_improved.sh --backup
+./install.sh --backup
 ```
 
 - Dry run to preview:
 ```bash
-./install_improved.sh --dry-run
+./install.sh --dry-run
 ```
 
 - Force overwrite (no backups):
 ```bash
-./install_improved.sh --force
+./install.sh --force
 ```
 
 ---
@@ -125,7 +117,7 @@ chmod +x install_improved.sh
 - `nvim/` — Neovim config  
 - `rofi/` — rofi themes and configs  
 - `wallpapers/` — wallpaper assets  
-- `install_improved.sh` — improved installer script (this repo root copy)
+- `install.sh` — improved installer script (this repo root copy)
 
 ---
 
@@ -162,9 +154,6 @@ Keep the repository’s original license and attribution. This README and the im
 
 ---
 
-## Contact
-
-If you want me to **apply** these files into your repo (overwrite `install.sh` and `README.md`) and create a commit-ready patch, reply `apply` and I will write the files into the working directory and provide a patch file.<h1 align="center" style="display: flex; justify-content: center; align-items: center;">
   <a href="https://archlinux.org/" target="_blank">
     <img alt="Logo" title="Logo" src="/preview/logo.png" style="margin-right: 10px;" />
   </a>
