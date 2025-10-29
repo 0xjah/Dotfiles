@@ -1,17 +1,8 @@
+
 /**
  *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Colors
+ * Author : Your Name
+ * Description : Minimal Pywal Rofi Theme
  **/
-@import "~/.cache/wal/colors-rofi-dark.rasi"
 
-* {
-    background:     #000000FF;
-    background-alt: #101010FF;
-    foreground:     #FFFFFFFF;
-    selected:       #62AEEFFF;
-    active:         #98C379FF;
-    urgent:         #E06B74FF;
-}
+@import "~/.cache/wal/colors-rofi-dark.rasi"

@@ -21,5 +21,5 @@ if echo "$status" | grep -q "Charging"; then
     icon="󰂄"
 fi
 
-echo "$icon $avg%"
+echo "BAT - $avg%"
 
