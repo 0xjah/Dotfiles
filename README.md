@@ -17,39 +17,154 @@
  <br>
   <br>
 
-## Info
+# Dotfiles — Professional Installation & Configuration
 
-- **Browser**: [Firefox](https://mozilla.org/) – Hardened settings with [Arkenfox](https://github.com/arkenfox/user.js/),and themed with [Pywalfox](https://github.com/Frewacom/pywalfox).
-- **Window Manager**: [i3](https://i3wm.org) – A dynamic tiling window manager.
-- **Terminals**: 
-  - [Kitty](https://sw.kovidgoyal.net/kitty/) – A fast, feature-rich terminal emulator.
-  - [Alacritty](https://github.com/alacritty/alacritty) – A GPU-accelerated terminal emulator.
-- **Launcher**: [Rofi](https://github.com/DaveDavenport/rofi) – Application launcher and power menu.
-- **Shell**: [Zsh](https://www.zsh.org) + [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme.
-- **GTK Theme & Config**: [Graphite-Dark](https://github.com/vinceliuice/Graphite-gtk-theme) + custom GTK-3.0 settings.
-- **Icons**: [Reversal-black-dark](https://github.com/yeyushengfan258/Reversal-icon-them)
-- **IDE**: [Neovim](https://neovim.io)
-- **File Manager**: [Yazi](https://yazi-rs.github.io/)
-- **Display Manager**: [LY](https://github.com/fairyglade/ly)
-- **Bootloader**: [GRUB](https://www.gnu.org/software/grub/) (NieR:Automata themed)
-- **Status Bars & Notifications**:
-  - [i3blocks](https://github.com/vivien/i3blocks) – Status bar for i3.
-  - [Polybar](https://github.com/polybar/polybar) – Highly customizable status bar.
-  - [Dunst](https://dunst-project.org/) – Lightweight notification daemon.
-- **System Info Tools**:
-  - [Neofetch](https://github.com/dylanaraps/neofetch) – CLI system info tool.
-  - [Fastfetch](https://github.com/LinusDierheimer/fastfetch) – Faster alternative to Neofetch.
-- **Media Player**: [MPV](https://mpv.io/)
-- **Wallpapers**: Collection including "wallpaper"
-=======
-## Installation
+**Repository:** collection of user configuration files and assets (i3, polybar, kitty, alacritty, dunst, rofi, neovim, themes, wallpapers, etc.)  
+**Maintainer:** Original author of the repo (kept attribution)  
+**Generated:** 20251029T200051Z
+
+---
+
+## Project overview
+
+This repository bundles a curated set of configuration files, themes, and assets to provide a ready-to-use, opinionated desktop environment based on i3 / polybar and related tools. The goal is to make a reproducible, easily deployable environment on Unix-like systems.
+
+**Included components**
+- Window manager: `i3`
+- Status bars: `polybar`, `i3blocks`
+- Terminal emulators: `kitty`, `alacritty`
+- Shell: `zsh` (`.zshrc`)
+- Editor: `nvim` (Neovim configuration)
+- Notification daemon: `dunst`
+- Compositor: `picom`
+- Rofi themes and configs
+- Fastfetch / Neofetch configs
+- GTK theme and icon assets
+- GRUB theme (yorha / hollow-knight-grub-theme)
+- Wallpapers and preview assets
+
+---
+
+## Supported systems & assumptions
+
+This installer is designed to run on common Linux distributions (Arch-based, Debian/Ubuntu, Fedora/RHEL). It:
+- Expects GNU coreutils, bash
+- Detects package manager for informational guidance (it will **not** force package installs by default)
+- Installs configuration files to standard XDG locations (e.g. `~/.config/*`)
+- Creates backups of any overwritten files by default
+
+---
+
+## Security & Safety
+
+- The installer never deletes user files without creating a timestamped backup directory (default: `~/.dotfiles_backup_<timestamp>`).
+- Root operations are requested only when required (for example when copying a GRUB theme to `/boot/grub/themes`).
+- Review the script before running. Prefer `--dry-run` on first execution.
+
+---
+
+## Quick install (recommended)
+
 ```bash
-> git clone https://github.com/0xjah/Dotfiles.git
-> cd ~/Dotfiles/
-> chmod +x install.sh
-> ./install.sh
+# clone
+git clone https://github.com/0xjah/Dotfiles.git ~/Dotfiles
+cd ~/Dotfiles
+
+# make installer executable and run (dry-run first)
+chmod +x install_improved.sh
+./install_improved.sh --dry-run
+
+# if output looks good, run for real
+./install_improved.sh --backup --symlink
 ```
-<h1 align="center" style="display: flex; justify-content: center; align-items: center;">
+
+---
+
+## Features of the improved installer
+
+- `--dry-run` : shows actions without making changes
+- `--backup`  : create timestamped backup of existing config files
+- `--symlink` : create symlinks instead of copying (safer for tracking with Git)
+- `--force`   : overwrite without creating backup (use carefully)
+- Idempotent: safe to run multiple times
+- Per-component verbosity and logging to `/tmp/dotfiles-install.log`
+- Distro detection and brief package suggestions (does **not** auto-install packages unless you enable it)
+
+---
+
+## Installation options & examples
+
+- Create symlinks with backup:
+```bash
+./install_improved.sh --backup --symlink
+```
+
+- Copy files (default), create backups:
+```bash
+./install_improved.sh --backup
+```
+
+- Dry run to preview:
+```bash
+./install_improved.sh --dry-run
+```
+
+- Force overwrite (no backups):
+```bash
+./install_improved.sh --force
+```
+
+---
+
+## Files layout (top-level)
+
+- `.themes/` — GTK / window-theme assets  
+- `i3/` — i3 configuration files  
+- `polybar/` — polybar configuration and modules  
+- `kitty/`, `alacritty/` — terminal configs  
+- `nvim/` — Neovim config  
+- `rofi/` — rofi themes and configs  
+- `wallpapers/` — wallpaper assets  
+- `install_improved.sh` — improved installer script (this repo root copy)
+
+---
+
+## Post-install / Next steps
+
+1. If you created symlinks, start a new shell or `source ~/.zshrc` to load shell changes.
+2. Restart i3: `i3-msg restart` (or log out/in).
+3. Rebuild GRUB (if you installed a GRUB theme) — on most systems:
+   - Debian/Ubuntu: `sudo update-grub`
+   - Arch: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+4. If any package is missing (e.g., `polybar`, `alacritty`, `neovim`), install it using your distro package manager.
+
+---
+
+## Troubleshooting
+
+- Permission errors when copying to `/boot` — run the installer with sudo where appropriate or allow the installer to call `sudo` only for the GRUB step.
+- Missing fonts or icons — ensure `ttf-nerd-fonts` or equivalent packages are installed.
+- GTK themes not applying — verify `gtk-3.0` directory was copied and your session is using the correct theme.
+
+---
+
+## Contributing
+
+1. Fork the original repository.
+2. Create a branch for your feature.
+3. Submit a pull request with a clear description and testing steps.
+
+---
+
+## License & Attribution
+
+Keep the repository’s original license and attribution. This README and the improved installer were generated to help maintainers and users adopt the configuration safely.
+
+---
+
+## Contact
+
+If you want me to **apply** these files into your repo (overwrite `install.sh` and `README.md`) and create a commit-ready patch, reply `apply` and I will write the files into the working directory and provide a patch file.<h1 align="center" style="display: flex; justify-content: center; align-items: center;">
   <a href="https://archlinux.org/" target="_blank">
     <img alt="Logo" title="Logo" src="/preview/logo.png" style="margin-right: 10px;" />
   </a>
