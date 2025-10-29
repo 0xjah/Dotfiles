@@ -148,12 +148,6 @@ chmod +x install.sh
 
 ---
 
-## License & Attribution
-
-Keep the repository’s original license and attribution. This README and the improved installer were generated to help maintainers and users adopt the configuration safely.
-
----
-
   <a href="https://archlinux.org/" target="_blank">
     <img alt="Logo" title="Logo" src="/preview/logo.png" style="margin-right: 10px;" />
   </a>
