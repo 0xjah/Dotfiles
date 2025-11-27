@@ -1,0 +1,19 @@
+Dotfiles
+========
+
+Curated configuration files and installer for i3/polybar/kitty/zsh/neovim.
+
+Install (recommended)::
+
+    git clone https://github.com/0xjah/Dotfiles.git ~/Dotfiles
+    cd ~/Dotfiles
+    chmod +x install.sh
+    ./install.sh --dry-run
+    ./install.sh --backup --symlink
+
+Top-level contents::
+
+    i3/    polybar/    kitty/    nvim/    rofi/    wallpapers/    install.sh
+
+Report issues or feature requests via GitHub issues or pull requests.
+
