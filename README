@@ -1,51 +1,19 @@
 Dotfiles
 ========
 
-Personal configuration files and a minimal installer for a lightweight i3-based
-desktop and development environment.
+Curated configuration files and installer for i3/polybar/kitty/zsh/neovim.
 
-Quick install
--------------
+Install (recommended)::
 
-Clone and preview changes with a dry run:
+    git clone https://github.com/0xjah/Dotfiles.git ~/Dotfiles
+    cd ~/Dotfiles
+    chmod +x install.sh
+    ./install.sh 
 
-```bash
-git clone https://github.com/0xjah/Dotfiles.git ~/Dotfiles
-cd ~/Dotfiles
-chmod +x install.sh
-./install.sh --dry-run
-```
+Top-level contents::
 
-Apply the dotfiles (create backups and symlinks):
-
-```bash
-./install.sh --backup --symlink
-```
-
-Installer flags
----------------
-
-- `--dry-run`  : show actions without modifying files
-- `--backup`   : move existing targets to `~/.dotfiles_backup_<timestamp>/`
-- `--symlink`  : create symlinks instead of copying files
-
-Repository layout
-------------------
-
-Top-level and `.config/` directories contain component configs. Common
-folders you may find here:
-
-```
-.config/i3  .config/polybar  .config/kitty  .config/nvim  .config/rofi
+    .config/i3  .config/polybar  .config/kitty  .config/nvim  .config/rofi
 .config/dunst  .config/i3blocks  .config/picom  .zshrc  install.sh
-```
-
-Customization & usage
-----------------------
-
-- Edit the files in this repository to change configuration.
-- Re-run `./install.sh --symlink` to update installed symlinks.
-- Restore from backups in `~/.dotfiles_backup_<timestamp>/` if needed.
 
 Contributing
 ------------
@@ -56,4 +24,3 @@ Credits
 -------
 
 Personal dotfiles by `0xjah`.
-
