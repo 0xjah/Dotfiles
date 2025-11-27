@@ -1,7 +1,11 @@
 Dotfiles
 ========
 
-Curated configuration files and installer for i3/polybar/kitty/zsh/neovim.
+Personal configuration files and a minimal installer for a lightweight i3-based
+desktop and development environment.
+
+Quick install
+-------------
 
 Install (recommended)::
 
@@ -10,7 +14,11 @@ Install (recommended)::
     chmod +x install.sh
     ./install.sh 
 
-Top-level contents::
+Repository layout
+------------------
+
+Top level and `.config/` directories contain component configs. Common
+folders you may find here:
 
     .config/i3  .config/polybar  .config/kitty  .config/nvim  .config/rofi
 .config/dunst  .config/i3blocks  .config/picom  .zshrc  install.sh
