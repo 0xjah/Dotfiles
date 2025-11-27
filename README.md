@@ -23,17 +23,15 @@ This repository bundles a curated set of configuration files, themes, and assets
 
 **Included components**
 - Window manager: `i3`
-- Status bars: `polybar`, `i3blocks`
+- Status bars: `polybar`
 - Terminal emulators: `kitty`
 - Shell: `zsh` (`.zshrc`)
 - Editor: `nvim` (Neovim configuration)
 - Notification daemon: `dunst`
 - Compositor: `picom`
 - Rofi themes and configs
-- Fastfetch / Neofetch configs
+- Neofetch configs
 - GTK theme and icon assets
-- GRUB theme (hollow-knight-grub-theme)
-- Wallpapers and preview assets
 
 ---
 

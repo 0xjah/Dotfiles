@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && {
+  alias vim="nvim"
+  alias vimdiff="nvim -d"
+}
+
+# Use $XINITRC variable if file exists.
+[ -f "$XINITRC" ] && alias startx='startx $XINITRC'
+
+[ -f "$MBSYNCRC" ] && alias mbsync='mbsync -c $MBSYNCRC'
+
+# sudo not required for some system commands
+# (Only include commands macOS actually has)
+for command in mount umount shutdown reboot ; do
+  alias $command="sudo $command"
+done
+unset command
+
+se() {
+  choice="$(find ~/.local/bin -mindepth 1 | sed "s|$HOME/.local/bin/||" | fzf)"
+  [ -f "$HOME/.local/bin/$choice" ] && $EDITOR "$HOME/.local/bin/$choice"
+}
+
+# Verbosity and settings
+alias \
+  cp="cp -iv" \
+  mv="mv -iv" \
+  rm="rm -vI" \
+  bc="bc -ql" \
+  rsync="rsync -vrPlu" \
+  mkd="mkdir -pv" \
+  yt="yt-dlp --embed-metadata -i" \
+  yta="yt-dlp -x -f bestaudio/best" \
+  ytt="yt-dlp --skip-download --write-thumbnail" \
+  ffmpeg="ffmpeg -hide_banner"
+
+###############################################
+# Colorized ls for macOS
+###############################################
+
+# macOS ls has different flags (+ no directory-first)
+if command -v gls >/dev/null 2>&1; then
+  # GNU ls installed via Homebrew
+  alias ls="gls -hN --color=auto --group-directories-first"
+else
+  # BSD ls fallback (no -N, no --color)
+  alias ls="ls -GFh"
+fi
+
+###############################################
+
+alias \
+  grep="grep --color=auto" \
+  diff="diff --color=auto" \
+  ccat="highlight --out-format=ansi" \
+  ip="ip -color=auto" # macOS has no ip(8) by default — requires brew install iproute2mac
+
+# Abbreviations
+alias \
+  ka="killall" \
+  g="git" \
+  trem="transmission-remote" \
+  YT="youtube-viewer" \
+  sdn="sudo shutdown -h now" \
+  e='$EDITOR' \
+  v='$EDITOR' \
+  p="brew" \
+  xi="true" \
+  xr="true" \
+  xq="true" \
+  z="zathura"
+
+# misc
+alias \
+  lf="lfub" \
+  magit="nvim -c MagitOnly" \
+  ref='shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutenvrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc'
+

@@ -1,0 +1,134 @@
+# ~/.config/yazi/config.yaml
+
+# Default editor
+editor: "nvim"
+
+# Terminal opener for all file types
+open:
+  # Text and Code files
+  "*.txt": "$EDITOR {file}"
+  "*.md": "bat {file} --style=auto --paging=always"
+  "*.markdown": "bat {file} --style=auto --paging=always"
+  "*.rst": "bat {file} --style=auto --paging=always"
+  
+  # Code files
+  "*.py": "$EDITOR {file}"
+  "*.js": "$EDITOR {file}"
+  "*.ts": "$EDITOR {file}"
+  "*.jsx": "$EDITOR {file}"
+  "*.tsx": "$EDITOR {file}"
+  "*.go": "$EDITOR {file}"
+  "*.rs": "$EDITOR {file}"
+  "*.c": "$EDITOR {file}"
+  "*.cpp": "$EDITOR {file}"
+  "*.h": "$EDITOR {file}"
+  "*.java": "$EDITOR {file}"
+  "*.sh": "$EDITOR {file}"
+  "*.bash": "$EDITOR {file}"
+  "*.zsh": "$EDITOR {file}"
+  "*.fish": "$EDITOR {file}"
+  "*.vim": "$EDITOR {file}"
+  "*.lua": "$EDITOR {file}"
+  "*.rb": "$EDITOR {file}"
+  "*.php": "$EDITOR {file}"
+  "*.swift": "$EDITOR {file}"
+  
+  # Config files
+  "*.yaml": "$EDITOR {file}"
+  "*.yml": "$EDITOR {file}"
+  "*.json": "jq -C . {file} | less -R"
+  "*.toml": "$EDITOR {file}"
+  "*.ini": "$EDITOR {file}"
+  "*.conf": "$EDITOR {file}"
+  "*.xml": "$EDITOR {file}"
+  
+  # Web files
+  "*.html": "$EDITOR {file}"
+  "*.css": "$EDITOR {file}"
+  "*.scss": "$EDITOR {file}"
+  "*.sass": "$EDITOR {file}"
+  
+  # PDFs - terminal viewers
+  "*.pdf": "pdftotext {file} - | less"
+  
+  # Images - terminal viewers (chafa is better than viu on macOS)
+  "*.png": "chafa --size 80x40 {file} && read -n 1 -s -r"
+  "*.jpg": "chafa --size 80x40 {file} && read -n 1 -s -r"
+  "*.jpeg": "chafa --size 80x40 {file} && read -n 1 -s -r"
+  "*.gif": "chafa --size 80x40 {file} && read -n 1 -s -r"
+  "*.webp": "chafa --size 80x40 {file} && read -n 1 -s -r"
+  "*.bmp": "chafa --size 80x40 {file} && read -n 1 -s -r"
+  "*.svg": "bat {file}"
+  
+  # Videos - mpv with terminal output
+  "*.mp4": "ffmpeg -i {file} 2>&1 | less"  # Show video info
+  "*.mkv": "ffmpeg -i {file} 2>&1 | less"
+  "*.avi": "ffmpeg -i {file} 2>&1 | less"
+  "*.mov": "ffmpeg -i {file} 2>&1 | less"
+  "*.webm": "ffmpeg -i {file} 2>&1 | less"
+  "*.flv": "ffmpeg -i {file} 2>&1 | less"
+  
+  # Audio - show metadata in terminal
+  "*.mp3": "ffmpeg -i {file} 2>&1 | less"
+  "*.wav": "ffmpeg -i {file} 2>&1 | less"
+  "*.flac": "ffmpeg -i {file} 2>&1 | less"
+  "*.m4a": "ffmpeg -i {file} 2>&1 | less"
+  "*.ogg": "ffmpeg -i {file} 2>&1 | less"
+  "*.aac": "ffmpeg -i {file} 2>&1 | less"
+  
+  # Archives - list contents
+  "*.zip": "unzip -l {file} | less"
+  "*.tar.gz": "tar -tzf {file} | less"
+  "*.tgz": "tar -tzf {file} | less"
+  "*.tar": "tar -tf {file} | less"
+  "*.tar.bz2": "tar -tjf {file} | less"
+  "*.tbz2": "tar -tjf {file} | less"
+  "*.tar.xz": "tar -tJf {file} | less"
+  "*.txz": "tar -tJf {file} | less"
+  "*.rar": "unrar l {file} | less"
+  "*.7z": "7z l {file} | less"
+  "*.gz": "gzip -l {file}"
+  "*.bz2": "bzcat {file} | less"
+  "*.xz": "xzcat {file} | less"
+  
+  # Documents
+  "*.doc": "textutil -convert txt -stdout {file} | less"  # macOS built-in
+  "*.docx": "pandoc -f docx -t plain {file} | less || textutil -convert txt -stdout {file} | less"
+  "*.odt": "pandoc -f odt -t plain {file} | less"
+  "*.rtf": "textutil -convert txt -stdout {file} | less"  # macOS built-in
+  
+  # Spreadsheets
+  "*.csv": "column -t -s, {file} | less -S"
+  "*.tsv": "column -t {file} | less -S"
+  "*.xlsx": "in2csv {file} | column -t -s, | less -S"
+  
+  # Binary files
+  "*.exe": "xxd {file} | less"
+  "*.bin": "xxd {file} | less"
+  "*.so": "nm {file} | less"
+  "*.dylib": "nm {file} | less"  # macOS dynamic library
+  "*.a": "ar -t {file} | less"
+  
+  # macOS specific
+  "*.dmg": "hdiutil info {file} | less"
+  "*.pkg": "pkgutil --payload-files {file} | less"
+  "*.plist": "plutil -p {file} | less"
+  
+  # Database files
+  "*.db": "sqlite3 {file} .schema | less"
+  "*.sqlite": "sqlite3 {file} .schema | less"
+  "*.sqlite3": "sqlite3 {file} .schema | less"
+  
+  # Log files
+  "*.log": "tail -n 100 {file} | less +G"
+  
+  # Fallback (any other file)
+  "*": "bat {file} --style=auto --paging=always || less {file}"
+
+# Preview settings
+preview:
+  pdf: "pdftotext {file} - | head -n 100"
+  image: "chafa --size 40x20 {file}"
+  video: "ffprobe {file} 2>&1"
+  audio: "ffprobe {file} 2>&1"
+
