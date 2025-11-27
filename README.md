@@ -145,7 +145,7 @@ chmod +x install.sh
 3. Submit a pull request with a clear description and testing steps.
 
 ---
-
+<p align="center">
   <a href="https://archlinux.org/" target="_blank">
     <img alt="Logo" title="Logo" src="/preview/logo.png" style="margin-right: 10px;" />
   </a>
@@ -153,4 +153,5 @@ chmod +x install.sh
   <a href="https://i3wm.org/" target="_blank">
     <img src="https://img.shields.io/static/v1?label=ARCH&message=I3&color=7393B3&labelColor=black" alt="OS" />
   </a>
-</h1>
+</p>
+
