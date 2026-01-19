@@ -1,6 +1,6 @@
--- My Minimal NVim Setup
+-- My Minimal NVim Setup --
 
--- Vim Decorations 
+-- Vim Decorations
 vim.o.winborder = "rounded"
 vim.o.tabstop = 2
 vim.o.cursorcolumn = false
@@ -15,7 +15,7 @@ vim.o.termguicolors = true
 vim.o.undofile = true
 vim.o.incsearch = true
 vim.o.signcolumn = "yes"
- 
+
 -- Keymappiing
 local map = vim.keymap.set
 vim.g.mapleader = " "
@@ -27,11 +27,12 @@ map({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
 map({ 'n', 'v', 'x' }, '<leader>s', ':e #<CR>')
 map({ 'n', 'v', 'x' }, '<leader>S', ':sf #<CR>')
 
--- Plugin Manager(Native) 
+-- Plugin Manager(Native)
 vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.pick" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-	{ src = "https://github.com/ellisonleao/gruvbox.nvim" },
+	{ src = "https://github.com/uZer/pywal16.nvim" },
+	{ src = "https://github.com/nordtheme/vim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
@@ -39,6 +40,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 })
+
 -- PLugin require
 require "mason".setup()
 require "mini.pick".setup()
@@ -52,23 +54,27 @@ require("nvim-treesitter.configs").setup({
 	highlight = { enable = true },
 })
 require "oil".setup()
+
 -- lsp
+vim.env.PATH = vim.env.PATH .. ':' .. vim.fn.stdpath('data') .. '/mason/bin'
 vim.lsp.enable({
 	"lua_ls",
-	"clang",
+	"clangd",
 	"gopls"
 })
--- autocompletions
-vim.api.nvim_create_autocmd('LspAttach', {
-	callback = function(ev)
-		local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
-		if client:supports_method('textDocument/completion') then
-			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-		end
-	end,
-})
 
-vim.cmd [[set completeopt+=noselect,popup]]
+-- autocompletions
+vim.o.completeopt = "menuone,noselect"
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	callback = function()
+		vim.bo.omnifunc = "v:lua.vim.lsp.omnifunc"
+	end
+})
+vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? "<C-n>" : "<Tab>"', { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "<C-p>" : "<S-Tab>"',
+	{ noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("i", "<CR>", 'pumvisible() ? "<C-y>" : "<CR>"', { noremap = true, expr = true, silent = true })
 
 -- Plugin keymapping
 map('n', '<leader>f', ":Pick files<CR>")
@@ -76,7 +82,7 @@ map('n', '<leader>h', ":Pick help<CR>")
 map('n', '<leader>e', ":Oil<CR>")
 map('n', '<leader>lf', vim.lsp.buf.format)
 
--- Status Line 
+-- Status Line
 require('lualine').setup()
 require("lualine").setup({
 	options = {
@@ -85,7 +91,6 @@ require("lualine").setup({
 		component_separators = "",
 		section_separators = "",
 	},
-
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch" },
@@ -107,7 +112,7 @@ require("lualine").setup({
 
 -- colorscheme
 vim.o.background = "dark"
-vim.cmd.colorscheme("gruvbox")
+vim.cmd.colorscheme("pywal16")
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "Float", { bg = "none" })
 vim.cmd(":hi statusline guibg=NONE")

@@ -1,161 +1,129 @@
 # Set modifier key to Super (Mod4)
 set $mod Mod4
 
-# Font for window titles and bar
-font pango:Iosevka Nerd Font 12
-# Load pywal colors from Xresources
-exec --no-startup-id xrdb -merge ~/.Xresources
-
-# Set from Xresources
-set_from_resource $bg     background
-set_from_resource $fg     foreground
-set_from_resource $color0 color0
-set_from_resource $color1 color1
-set_from_resource $color2 color2
-set_from_resource $color3 color3
-set_from_resource $color4 color4
-set_from_resource $color5 color5
-set_from_resource $color6 color6
-set_from_resource $color7 color7
-set_from_resource $color8 color8
-set_from_resource $color9 color9
-set_from_resource $color10 color10
-set_from_resource $color11 color11
-set_from_resource $color12 color12
-set_from_resource $color13 color13
-set_from_resource $color14 color14
-set_from_resource $color15 color15
-
-# i3 window border colors
-# class                 border    background text     indicator child_border
-client.focused          $color6   $color4    $fg      $color4   $color6
-client.focused_inactive $color0   $bg        $fg      $bg       $color0
-client.unfocused        $color0   $bg        $fg      $bg       $color0
-client.urgent           $color1   $color1    $fg      $color1   $color1
-client.placeholder      $color8   $bg        $fg      $bg       $color8
-
-# Remove borders for all windows
+# Borders and gaps
 for_window [class=".*"] border pixel 0
+gaps inner 5
+gaps outer 0
 
-#color
-set_from_resource $background  i3wm.color0 #f0f0f0
-set_from_resource $text        i3wm.color2 #f0f0f0
-set_from_resource $inactive    i3wm.color4 #f0f0f0
-set_from_resource $error       i3wm.color5 #f0f0f0
+# Font
+font pango:Iosevka Nerd Font 12
 
-# i3bar configuration
-exec_always --no-startup-id bash -c "sleep 2 && ~/.config/polybar/launch.sh"
-#bar {
-#    status_command i3blocks
-#    separator_symbol "::"
-#    position top
-#    colors {
-#	 separator		    $text
-#	 background		    $background
-#	 statusline		    $text
-#	 focused_workspace	$text		$text		$background
-#	 active_workspace	$inactive	$inactive	$background
-#	 inactive_workspace	$background	$background	$text
-#	 urgent_workspace	$error		$error		$background
-#    }    
-#}
+# Enhanced Pywal colors - using more of the palette
+set_from_resource $fg     i3wm.color7  #f0f0f0
+set_from_resource $bg     i3wm.color0  #000000
+set_from_resource $accent i3wm.color1  #ff0000
+set_from_resource $alert  i3wm.color3  #ffff00
+set_from_resource $dim    i3wm.color8  #555555
+set_from_resource $bright i3wm.color15 #ffffff
 
-# Autostart applications
-exec --no-startup-id dex --autostart --environment i3
+# Window colors with better contrast
+client.focused          $accent $accent $bright $accent $accent
+client.focused_inactive $dim    $dim    $fg     $dim    $dim
+client.unfocused        $bg     $bg     $dim    $bg     $bg
+client.urgent           $alert  $alert  $bg     $alert  $alert
+
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# Core system
+exec --no-startup-id xrdb -merge ~/.Xresources
+exec --no-startup-id /usr/lib64/libexec/polkit-kde-authentication-agent-1
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id nm-applet
-exec --no-startup-id clipit
-exec --no-startup-id xrdb -merge $HOME/.Xresources
-exec --no-startup-id feh --bg-center --restore
-exec --no-startup-id wal -i "$(< "${HOME}/.cache/wal/wal")"
-exec --no-startup-id nm-applet --restore  # NetworkManager Applet
-exec --no-startup-id xfce4-power-manager --restore # XfcePowerManager
-exec --no-startup-id kdeconnect-indicator --restore # KDE Connect
-exec --no-startup-id qbittorrent --restore # qBittorrent
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd # Xfce4 notifications
-exec --no-startup-id  blueman-manager #Bluetooth manager
-exec --no-startup-id /usr/lib64/libexec/polkit-kde-authentication-agent-1 # Polkit Agent
-exec --no-startup-id copyq  # CopyQ
-exec telegram-desktop --restore # Telegram 
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd # Xfce4 notifications
-exec --no-startup-id vesktop  # Discord
-exec --no-startup-id slack  # Slack
-exec --no-startup-id picom --backend glx --log-level DEBUG --config ~/.config/picom/picom.conf
-exec --no-startup-id autotiling -w 1 3 5 7 9
-# Disable touchpad
-exec --no-startup-id xinput set-prop `xinput --list | awk '/[Tt]ouch[Pp]ad.*pointer/ {print $5}' | sed 's/id=\(.*\)/\1/'` "Device Enabled" 0
 
-# Keybindings for applications
+# Pywal
+exec --no-startup-id wal -R
+
+# Compositor
+exec --no-startup-id picom -b
+
+# Notifications
+exec --no-startup-id ~/.config/dunst/launchdunst.sh
+# System tray
+exec --no-startup-id nm-applet
+exec --no-startup-id sleep 1 && blueman-applet
+exec --no-startup-id sleep 1 && xfce4-power-manager
+exec --no-startup-id sleep 2 && kdeconnect-indicator
+
+# Window management - autotiling
+exec_always --no-startup-id autotiling
+
+# XDG autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# Keybindings
 bindsym $mod+q kill
 bindsym $mod+Return exec kitty
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
-bindsym $mod+c exec --no-startup-id firefox
-bindsym $mod+n exec --no-startup-id kitty nvim
-bindsym $mod+e exec --no-startup-id kitty yazi
-bindsym $mod+BackSpace exec --no-startup-id ~/.config/rofi/powermenu/type-2/powermenu.sh 
-bindsym $mod+Shift+BackSpace exec --no-startup-id bash ".config/rofi.a/rofi-wifi-menu.sh"
-bindsym $mod+Shift+w exec --no-startup-id feh --randomize --bg-fill ~/wallpapers/*
-bindsym $mod+x exec ~/.config/i3/lock.sh
-bindsym $mod+Shift+b exec ~/.config/i3blocks/script/colorscheme-picker -d $HOME/media/wallpapers
+bindsym $mod+d exec dmenu_run
+bindsym $mod+BackSpace exec --no-startup-id "echo -e 'Lock\nLogout\nSleep\nReboot\nShutdown' | dmenu -i -p 'Power:' | xargs -I {} sh -c 'case {} in Lock) i3lock ;; Logout) i3-msg exit ;; Sleep) i3lock && systemctl suspend ;; Reboot) systemctl reboot ;; Shutdown) systemctl poweroff ;; esac'"
+bindsym $mod+x exec --no-startup-id ~/.config/i3/lock.sh
+bindsym  XF86Tools exec --no-startup-id "$HOME/.local/bin/colorscheme-picker -d $HOME/pics"
+bindsym  XF86Calculator exec /usr/local/bin/dmenu-calc
+bindsym $mod+Tab exec /usr/local/bin/dmenu_running
 
 # Screenshots
-set $shotdir /home/$USER/media/screenshots
-#full
-bindsym Print exec --no-startup-id sh -c 'mkdir -p $shotdir && filepath="$shotdir/$(date +%Y-%m-%d_%H-%M-%S).png" && maim "$filepath" && notify-send "Screenshot" "Saved to $filepath"'
-#active window
-bindsym $mod+Print exec --no-startup-id sh -c 'mkdir -p $shotdir && filepath="$shotdir/active_$(date +%Y-%m-%d_%H-%M-%S).png" && maim --window $(xdotool getactivewindow) "$filepath" && notify-send "Window Screenshot" "Saved to $filepath"'
-#selection
-bindsym Shift+Print exec --no-startup-id sh -c 'mkdir -p $shotdir && filepath="$shotdir/select_$(date +%Y-%m-%d_%H-%M-%S).png" && maim --select "$filepath" && notify-send "Selection Screenshot" "Saved to $filepath"'
+set $s ~/media/screenshots
+bindsym Print exec --no-startup-id mkdir -p $s && maim "$s/$(date +%F_%T).png" && notify-send "Screenshot saved"
+bindsym $mod+Print exec --no-startup-id mkdir -p $s && maim -i $(xdotool getactivewindow) "$s/window_$(date +%F_%T).png" && notify-send "Window captured"
+bindsym Shift+Print exec --no-startup-id mkdir -p $s && maim -s "$s/select_$(date +%F_%T).png" && notify-send "Selection captured"
 
-# Volume and brightness controls
+# Media controls
 bindsym XF86AudioMute exec --no-startup-id pamixer -t && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 3 && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 3 && pkill -RTMIN+1 i3blocks
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 
 # Window management
 floating_modifier $mod
 tiling_drag modifier titlebar
-gaps inner 5
-
-# popups control 
 popup_during_fullscreen smart
 
-# Focus and move windows
+# Focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
-# Layout and split management
+# Layout
 bindsym $mod+h split h
 bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
-#Workspaces Variables
-set $ws1 "[1]"
-set $ws2 "[2]"
-set $ws3 "[3]"
-set $ws4 "[4]"
-set $ws5 "[5]"
-set $ws6 "[6]"
-set $ws7 "[7]"
-set $ws8 "[8]"
-set $ws9 "[9]"
-set $ws10 "[10]"
-set $ws11 "[11]"
+# Gaps
+bindsym $mod+z gaps inner current plus 3
+bindsym $mod+Shift+z gaps inner current minus 3
 
-# Switch to workspace
+# Workspaces
+set $ws1 "one"
+set $ws2 "two"
+set $ws3 "three"
+set $ws4 "four"
+set $ws5 "five"
+set $ws6 "six"
+set $ws7 "sevevn"
+set $ws8 "eight"
+set $ws9 "nine"
+set $ws10 "ten"
+
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -166,12 +134,7 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-bindsym $mod+p workspace $ws11
 
-#Assign Programs to Workspaces
-
-
-# Move container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -182,9 +145,8 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
-bindsym $mod+Shift+p move container to workspace $ws11
 
-# Reload and restart i3
+# Reload/restart
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
@@ -204,15 +166,3 @@ mode "resize" {
     bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
-
-# Change focus between windows using arrow keys
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# Move focused window using arrow keys
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
