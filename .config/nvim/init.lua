@@ -1,118 +1,52 @@
--- My Minimal NVim Setup --
+-- Based Nvim config
 
--- Vim Decorations
-vim.o.winborder = "rounded"
-vim.o.tabstop = 2
-vim.o.cursorcolumn = false
-vim.o.ignorecase = true
-vim.o.shiftwidth = 2
-vim.o.smartindent = true
-vim.o.wrap = false
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.swapfile = false
-vim.o.termguicolors = true
-vim.o.undofile = true
-vim.o.incsearch = true
-vim.o.signcolumn = "yes"
+-- opt
+require("config.options")
 
--- Keymappiing
-local map = vim.keymap.set
-vim.g.mapleader = " "
-map('n', '<leader>o', ':update<CR> :source<CR>')
-map('n', '<leader>w', ':write<CR>')
-map('n', '<leader>q', ':quit<CR>')
-map({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
-map({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
-map({ 'n', 'v', 'x' }, '<leader>s', ':e #<CR>')
-map({ 'n', 'v', 'x' }, '<leader>S', ':sf #<CR>')
-
--- Plugin Manager(Native)
+-- native plugin manager 
 vim.pack.add({
-	{ src = "https://github.com/nvim-mini/mini.pick" },
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-	{ src = "https://github.com/uZer/pywal16.nvim" },
-	{ src = "https://github.com/nordtheme/vim" },
-	{ src = "https://github.com/stevearc/oil.nvim" },
-	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
-	{ src = "https://github.com/mason-org/mason.nvim" },
-	{ src = "https://github.com/neovim/nvim-lspconfig" },
-	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
-	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
+	{ src = "https://github.com/folke/twilight.nvim" }, -- dim inactive code
+	{ src = "https://github.com/wnkz/monoglow.nvim" }, -- monochrome colorscheme
+	{ src = "https://github.com/e-ink-colorscheme/e-ink.nvim" }, -- eink colorscheme
+	{ src = "https://github.com/nvim-mini/mini.pick" }, -- fuzzy finder
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" }, -- treesitter highlighting
+	{ src = "https://github.com/nordtheme/vim" }, -- nord colorscheme
+	{ src = "https://github.com/stevearc/oil.nvim" }, -- file explorer
+	{ src = "https://github.com/chomosuke/typst-preview.nvim" }, -- typst preview
+	{ src = "https://github.com/mason-org/mason.nvim" }, -- LSP installer
+	{ src = "https://github.com/neovim/nvim-lspconfig" }, -- LSP configs
+	{ src = "https://github.com/hrsh7th/nvim-cmp" }, -- completion
+	{ src = "https://github.com/hrsh7th/cmp-nvim-lsp" }, -- LSP completion source
+	{ src = "https://github.com/L3MON4D3/LuaSnip" }, -- snippets
+	{ src = "https://github.com/saadparwaiz1/cmp_luasnip" }, -- snippet completion source
+	{ src = "https://github.com/windwp/nvim-autopairs" }, -- auto pairs
+	{ src = "https://github.com/folke/which-key.nvim" }, -- keymap hints
+	{ src = "https://github.com/numToStr/Comment.nvim" }, -- comment toggles
+	{ src = "https://github.com/lewis6991/gitsigns.nvim" }, -- git signs
+	{ src = "https://github.com/nvim-lualine/lualine.nvim" }, -- statusline
+	{ src = "https://github.com/nvim-tree/nvim-web-devicons" }, -- file icons
+	{ src = "https://github.com/norcalli/nvim-colorizer.lua" }, -- css color
+	{ src = "https://github.com/mfussenegger/nvim-lint" }, -- linting
+	{ src = "https://github.com/iamcco/markdown-preview.nvim", build = "cd app && yarn install" } -- markdown preview
 })
 
--- PLugin require
-require "mason".setup()
-require "mini.pick".setup()
-require("nvim-treesitter.configs").setup({
-	ensure_installed = {
-		"svelte",
-		"typescript",
-		"javascript",
-		"css",
-	},
-	highlight = { enable = true },
-})
-require "oil".setup()
+-- keymaps
+require("config.keymaps")
 
--- lsp
-vim.env.PATH = vim.env.PATH .. ':' .. vim.fn.stdpath('data') .. '/mason/bin'
-vim.lsp.enable({
-	"lua_ls",
-	"clangd",
-	"gopls"
-})
-
--- autocompletions
-vim.o.completeopt = "menuone,noselect"
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "*",
-	callback = function()
-		vim.bo.omnifunc = "v:lua.vim.lsp.omnifunc"
-	end
-})
-vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? "<C-n>" : "<Tab>"', { noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "<C-p>" : "<S-Tab>"',
-	{ noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap("i", "<CR>", 'pumvisible() ? "<C-y>" : "<CR>"', { noremap = true, expr = true, silent = true })
-
--- Plugin keymapping
-map('n', '<leader>f', ":Pick files<CR>")
-map('n', '<leader>h', ":Pick help<CR>")
-map('n', '<leader>e', ":Oil<CR>")
-map('n', '<leader>lf', vim.lsp.buf.format)
-
--- Status Line
-require('lualine').setup()
-require("lualine").setup({
-	options = {
-		icons_enabled = false,
-		theme = "auto",
-		component_separators = "",
-		section_separators = "",
-	},
-	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { "branch" },
-		lualine_c = { "filename" },
-		lualine_x = {
-			function()
-				local encoding = vim.o.fileencoding
-				if encoding == "" then
-					return vim.bo.fileformat .. " :: " .. vim.bo.filetype
-				else
-					return encoding .. " :: " .. vim.bo.fileformat .. " :: " .. vim.bo.filetype
-				end
-			end,
-		},
-		lualine_y = { "progress" },
-		lualine_z = { "location" },
-	},
-})
-
+-- plugins
+require("plugins.mason")
+require("plugins.treesitter")
+require("plugins.oil")
+require("plugins.comment")
+require("plugins.gitsigns")
+require("plugins.which-key")
+require("plugins.mini-pick")
+require("plugins.lsp")
+require("plugins.cmp")
+require("plugins.lint")
+require("plugins.twilight")
+require("plugins.lualine")
+require("plugins.colorizer")
+require("plugins.markdown-preview")
 -- colorscheme
-vim.o.background = "dark"
-vim.cmd.colorscheme("pywal16")
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "Float", { bg = "none" })
-vim.cmd(":hi statusline guibg=NONE")
+require("theme.colorscheme")
